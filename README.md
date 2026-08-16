@@ -8,7 +8,11 @@ Official repository for **[techfusionltd.github.io](https://techfusionltd.github
 
 ```
 ├── index.html                  # Main homepage & mobile app directory
-├── favicon.svg                 # Brand SVG icon
+├── favicon.svg                 # Brand vector icon
+├── favicon.png                 # Brand icon
+├── logo.png                    # Brand logo
+├── assets/
+│   └── logo.png                # Official Techfusion Ltd logo
 ├── css/
 │   └── style.css               # Shared modern CSS design system & typography
 ├── js/

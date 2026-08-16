@@ -183,19 +183,25 @@ code {
 .brand-icon {
   width: 36px;
   height: 36px;
-  border-radius: var(--radius-md);
-  background: linear-gradient(135deg, #38bdf8 0%, #6366f1 100%);
+  border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #ffffff;
-  box-shadow: 0 2px 10px rgba(56, 189, 248, 0.3);
+  overflow: hidden;
 }
 
-.brand-icon svg {
-  width: 20px;
-  height: 20px;
-  fill: currentColor;
+.brand-logo {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  object-fit: contain;
+  display: block;
+  flex-shrink: 0;
+}
+
+.footer-brand .brand-logo {
+  width: 32px;
+  height: 32px;
 }
 
 .brand-text {
