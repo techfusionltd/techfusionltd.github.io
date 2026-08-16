@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TechFusion — Mobile Apps & Privacy Directory</title>
+  <meta name="description" content="Official home and privacy portal of TechFusion mobile applications. Discover our apps and transparent privacy commitments.">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  
+  <!-- Modern Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Site Navigation Header -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="brand" aria-label="TechFusion Home">
+        <div class="brand-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+          </svg>
+        </div>
+        <span class="brand-text">TechFusion</span>
+        <span class="brand-badge">Apps &amp; Privacy</span>
+      </a>
+
+      <nav aria-label="Main Navigation">
+        <ul class="nav-links">
+          <li><a href="#apps" class="nav-link active">Apps &amp; Policies</a></li>
+          <li><a href="#principles" class="nav-link">Privacy Principles</a></li>
+          <li><a href="#contact" class="nav-link">Support &amp; Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-actions">
+        <button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle Dark / Light Theme" title="Toggle Theme">
+          <!-- Sun Icon (for dark theme) -->
+          <svg id="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+          </svg>
+          <!-- Moon Icon (for light theme) -->
+          <svg id="moon-icon" style="display:none;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content Area -->
+  <main class="main-content">
+
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="hero-glow"></div>
+      <div class="container hero-content">
+        <div class="hero-pill">
+          <span>🛡️</span> Privacy-First Mobile Studio
+        </div>
+        <h1 class="hero-title">Smart, Purpose-Built Mobile Experiences</h1>
+        <p class="hero-subtitle">
+          TechFusion crafts intuitive mobile utilities, educational roleplay tools, and habit-coaching applications with unwavering respect for user privacy, minimal data retention, and full transparency.
+        </p>
+        <div class="hero-actions">
+          <a href="#apps" class="btn btn-primary">
+            Explore Mobile Apps &amp; Policies
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+          </a>
+          <a href="privacy/funny-prank-calls.html" class="btn btn-secondary">
+            Featured: Funny Prank Calls Policy
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Apps Directory Section -->
+    <section id="apps" class="section">
+      <div class="container">
+        <div class="section-header" style="display: flex; justify-content: space-between; align-items: flex-end; flex-wrap: wrap; gap: 1rem;">
+          <div>
+            <h2 class="section-title">Mobile Applications &amp; Privacy Policies</h2>
+            <p class="section-desc">Select an app below to review its complete bilingual privacy documentation, third-party disclosures, and data rights.</p>
+          </div>
+          <div style="min-width: 260px;">
+            <input type="search" id="app-search" placeholder="Filter apps by name or ID..." style="width: 100%; padding: 0.6rem 1rem; border-radius: var(--radius-md); border: 1px solid var(--border-subtle); background: var(--bg-surface); color: var(--text-primary); font-size: 0.9rem;">
+          </div>
+        </div>
+
+        <div class="apps-grid">
+          
+          <!-- App Card 1: Funny Prank Calls -->
+          <article class="app-card" data-app-keywords="funny prank calls dev.techfusion.funnyprankcalls simulated pretend habit coaching call tts voice ai">
+            <div class="app-card-header">
+              <div class="app-icon app-icon-prank">
+                📞
+              </div>
+              <div class="app-meta">
+                <h3 class="app-title">Funny Prank Calls</h3>
+                <div class="app-pkg">
+                  <span>dev.techfusion.funnyprankcalls</span>
+                  <button class="copy-badge-btn" data-copy-text="dev.techfusion.funnyprankcalls" title="Copy Package ID">
+                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                      <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                    </svg>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <p class="app-desc">
+              Simulated phone call entertainment &amp; habit-coaching tool for parents and guardians. Features realistic incoming call simulations, neural AI voice synthesis, and custom topic scripting without real telephony access.
+            </p>
+
+            <div class="app-tags">
+              <span class="tag tag-accent">Simulated Call Only</span>
+              <span class="tag tag-success">100% On-Device Data</span>
+              <span class="tag">Adult Gate (18+)</span>
+              <span class="tag">AI Voice (VieNeu / Kokoro)</span>
+              <span class="tag">AdMob &amp; UMP</span>
+            </div>
+
+            <div class="app-card-footer">
+              <span style="font-size: 0.8rem; color: var(--text-muted);">Updated Aug 16, 2026</span>
+              <a href="privacy/funny-prank-calls.html" class="btn btn-primary btn-sm policy-link-btn">
+                Privacy Policy (EN / VI) &rarr;
+              </a>
+            </div>
+          </article>
+
+          <!-- Placeholder Card for upcoming apps -->
+          <article class="app-card" style="border-style: dashed;" data-app-keywords="upcoming more new apps">
+            <div class="app-card-header">
+              <div class="app-icon app-icon-placeholder">
+                ✨
+              </div>
+              <div class="app-meta">
+                <h3 class="app-title">Upcoming Apps</h3>
+                <span class="app-pkg">In active development</span>
+              </div>
+            </div>
+
+            <p class="app-desc">
+              We are actively developing new privacy-respecting utilities and lifestyle mobile apps. Privacy policies for all upcoming releases will be published directly in this directory.
+            </p>
+
+            <div class="app-tags">
+              <span class="tag">iOS &amp; Android</span>
+              <span class="tag">Privacy-By-Design</span>
+            </div>
+
+            <div class="app-card-footer">
+              <span style="font-size: 0.8rem; color: var(--text-muted);">Stay tuned</span>
+              <a href="mailto:support@techfusion.dev" class="btn btn-secondary btn-sm">Contact Developer</a>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Privacy Principles Section -->
+    <section id="principles" class="section" style="background-color: var(--bg-surface);">
+      <div class="container">
+        <div class="section-header text-center" style="max-width: 680px; margin-left: auto; margin-right: auto;">
+          <h2 class="section-title">Our Privacy &amp; Data Principles</h2>
+          <p class="section-desc">Every application we create adheres to strict transparency, minimal data retention, and user sovereignty standards.</p>
+        </div>
+
+        <div class="features-grid">
+          
+          <div class="feature-box">
+            <div class="feature-box-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="2" y="2" width="20" height="8" rx="2" ry="2"></rect>
+                <rect x="2" y="14" width="20" height="8" rx="2" ry="2"></rect>
+                <line x1="6" y1="6" x2="6.01" y2="6"></line>
+                <line x1="6" y1="18" x2="6.01" y2="18"></line>
+              </svg>
+            </div>
+            <h3 class="feature-box-title">On-Device Local Storage</h3>
+            <p class="feature-box-desc">No mandatory cloud accounts, usernames, or remote profile synchronization. Your data stays in your device's sandboxed local storage.</p>
+          </div>
+
+          <div class="feature-box">
+            <div class="feature-box-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"></path>
+                <path d="M19 10v2a7 7 0 0 1-14 0v-2"></path>
+                <line x1="12" y1="19" x2="12" y2="23"></line>
+                <line x1="8" y1="23" x2="16" y2="23"></line>
+              </svg>
+            </div>
+            <h3 class="feature-box-title">Ephemeral AI Processing</h3>
+            <p class="feature-box-desc">When AI speech synthesis is requested, text is streamed transiently in memory over HTTPS (TLS 1.3) and never saved or indexed on our TTS servers.</p>
+          </div>
+
+          <div class="feature-box">
+            <div class="feature-box-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+              </svg>
+            </div>
+            <h3 class="feature-box-title">Strict Child Safety</h3>
+            <p class="feature-box-desc">Full compliance with COPPA and GDPR-K regulations. Roleplay and simulation tools feature adult gate verification for parental operation.</p>
+          </div>
+
+          <div class="feature-box">
+            <div class="feature-box-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="3 6 5 6 21 6"></polyline>
+                <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>
+              </svg>
+            </div>
+            <h3 class="feature-box-title">Instant Data Erasure</h3>
+            <p class="feature-box-desc">Deleting an item within the app or uninstalling the application permanently wipes all profiles, audio caches, and settings with no residual traces.</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Support & Contact Section -->
+    <section id="contact" class="section">
+      <div class="container">
+        <div class="highlight-box" style="background-color: var(--bg-secondary); border: 1px solid var(--border-subtle); border-left: 4px solid var(--accent-primary); border-radius: var(--radius-lg); padding: 2rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1.5rem;">
+          <div>
+            <h2 style="font-size: 1.5rem; margin-bottom: 0.5rem;">Developer Inquiries &amp; Privacy Support</h2>
+            <p style="margin-bottom: 0;">Have questions regarding our mobile applications, data protection practices, or need assistance?</p>
+          </div>
+          <div>
+            <a href="mailto:support@techfusion.dev" class="btn btn-primary" style="display: inline-flex; align-items: center; gap: 0.5rem;">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                <polyline points="22,6 12,13 2,6"></polyline>
+              </svg>
+              support@techfusion.dev
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Global Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <div class="brand" style="margin-bottom: 0.75rem;">
+            <div class="brand-icon" style="width: 28px; height: 28px;">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="width: 16px; height: 16px;">
+                <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+              </svg>
+            </div>
+            <span class="brand-text">TechFusion</span>
+          </div>
+          <p>Delivering modern, privacy-focused mobile software applications and interactive tools.</p>
+        </div>
+
+        <div>
+          <h4 class="footer-heading">Mobile Apps</h4>
+          <ul class="footer-links">
+            <li><a href="privacy/funny-prank-calls.html">Funny Prank Calls</a></li>
+            <li><a href="privacy/funny-prank-calls.html#english">English Policy</a></li>
+            <li><a href="privacy/funny-prank-calls.html#tiếng-việt">Chính Sách Tiếng Việt</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-heading">Publisher</h4>
+          <ul class="footer-links">
+            <li><a href="mailto:support@techfusion.dev">support@techfusion.dev</a></li>
+            <li><a href="https://github.com/techfusionltd" target="_blank" rel="noopener">GitHub Organization</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>&copy; 2026 TechFusion. All rights reserved.</div>
+        <div>Hosted on GitHub Pages &bull; techfusionltd.github.io</div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
