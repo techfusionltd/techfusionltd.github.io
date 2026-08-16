@@ -12,7 +12,8 @@ Official repository for **[techfusionltd.github.io](https://techfusionltd.github
 ├── favicon.png                 # Brand icon
 ├── logo.png                    # Brand logo
 ├── assets/
-│   └── logo.png                # Official Techfusion Ltd logo
+│   ├── logo.png                # Official Techfusion Ltd company logo
+│   └── funny-prank-calls.png   # Funny Prank Calls official app icon
 ├── css/
 │   └── style.css               # Shared modern CSS design system & typography
 ├── js/
