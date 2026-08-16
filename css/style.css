@@ -37,7 +37,7 @@
   --radius-lg: 16px;
   --radius-full: 9999px;
 
-  --container-width: 1140px;
+  --container-width: 1260px;
   --header-height: 72px;
 }
 
@@ -402,15 +402,15 @@ code {
 /* Grid of Apps */
 .apps-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
-  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(460px, 1fr));
+  gap: 2rem;
 }
 
 .app-card {
   background-color: var(--bg-secondary);
   border: 1px solid var(--border-subtle);
   border-radius: var(--radius-lg);
-  padding: 1.75rem;
+  padding: 2.25rem;
   display: flex;
   flex-direction: column;
   transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
@@ -428,14 +428,14 @@ code {
 .app-card-header {
   display: flex;
   align-items: flex-start;
-  gap: 1rem;
+  gap: 1.25rem;
   margin-bottom: 1.25rem;
 }
 
 .app-icon {
-  width: 58px;
-  height: 58px;
-  border-radius: var(--radius-md);
+  width: 64px;
+  height: 64px;
+  border-radius: var(--radius-lg);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -937,6 +937,15 @@ code {
 @media (max-width: 640px) {
   .hero-title {
     font-size: 2.15rem;
+  }
+
+  .apps-grid {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+
+  .app-card {
+    padding: 1.5rem;
   }
 
   .nav-links {
