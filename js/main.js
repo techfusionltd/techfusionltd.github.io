@@ -45,51 +45,68 @@ function updateThemeIcon(theme) {
   }
 }
 
-/* Bilingual Language Switcher (EN / VI) */
+/* Detect Browser Preferred Language (defaults to 'vi' if Vietnamese, otherwise 'en') */
+function detectBrowserLanguage() {
+  const userLangs = navigator.languages || [navigator.language || navigator.userLanguage || 'en'];
+  for (const lang of userLangs) {
+    if (lang && lang.toLowerCase().startsWith('vi')) {
+      return 'vi';
+    }
+  }
+  return 'en';
+}
+
+/* Single Active Language Switcher (EN vs VI) */
 function initLanguageSwitcher() {
   const langButtons = document.querySelectorAll('[data-lang-target]');
-  const enSections = document.querySelectorAll('.lang-section-en');
-  const viSections = document.querySelectorAll('.lang-section-vi');
+  const enElements = document.querySelectorAll('.lang-section-en, [data-lang="en"]');
+  const viElements = document.querySelectorAll('.lang-section-vi, [data-lang="vi"]');
   const tocEn = document.getElementById('toc-en');
   const tocVi = document.getElementById('toc-vi');
 
   if (!langButtons.length) return;
 
   function switchLang(lang) {
-    localStorage.setItem('tf_policy_lang', lang);
+    // Strictly enforce single language: 'vi' or 'en'
+    const activeLang = (lang === 'vi') ? 'vi' : 'en';
+
+    // Update html lang attribute
+    document.documentElement.setAttribute('lang', activeLang);
+
+    // Update active button state
     langButtons.forEach(btn => {
-      btn.classList.toggle('active', btn.dataset.langTarget === lang);
+      btn.classList.toggle('active', btn.dataset.langTarget === activeLang);
     });
 
-    if (lang === 'vi') {
-      enSections.forEach(el => el.classList.add('hidden'));
-      viSections.forEach(el => el.classList.remove('hidden'));
+    if (activeLang === 'vi') {
+      enElements.forEach(el => el.classList.add('hidden'));
+      viElements.forEach(el => el.classList.remove('hidden'));
       if (tocEn) tocEn.classList.add('hidden');
       if (tocVi) tocVi.classList.remove('hidden');
-    } else if (lang === 'all') {
-      enSections.forEach(el => el.classList.remove('hidden'));
-      viSections.forEach(el => el.classList.remove('hidden'));
-      if (tocEn) tocEn.classList.remove('hidden');
-      if (tocVi) tocVi.classList.remove('hidden');
     } else {
-      enSections.forEach(el => el.classList.remove('hidden'));
-      viSections.forEach(el => el.classList.add('hidden'));
-      if (tocEn) tocEn.classList.remove('hidden');
+      viElements.forEach(el => el.classList.add('hidden'));
+      enElements.forEach(el => el.classList.remove('hidden'));
       if (tocVi) tocVi.classList.add('hidden');
+      if (tocEn) tocEn.classList.remove('hidden');
     }
+
+    // Refresh scrollspy for visible sections
+    initTableOfContents();
   }
 
   langButtons.forEach(btn => {
     btn.addEventListener('click', (e) => {
       e.preventDefault();
       const targetLang = btn.dataset.langTarget;
+      localStorage.setItem('tf_policy_lang', targetLang);
       switchLang(targetLang);
     });
   });
 
-  // Load preferred or default language
-  const savedLang = localStorage.getItem('tf_policy_lang') || 'en';
-  switchLang(savedLang);
+  // Determine starting language: stored preference -> browser language -> fallback 'en'
+  const savedLang = localStorage.getItem('tf_policy_lang');
+  const initialLang = savedLang || detectBrowserLanguage();
+  switchLang(initialLang);
 }
 
 /* Copy to Clipboard Functionality */
@@ -126,14 +143,20 @@ function initCopyButtons() {
   });
 }
 
-/* ScrollSpy for Table of Contents */
+/* ScrollSpy for Table of Contents (Watches only currently visible language sections) */
+let activeTOCScrollSpyObserver = null;
+
 function initTableOfContents() {
-  const sections = document.querySelectorAll('.policy-section[id]');
+  if (activeTOCScrollSpyObserver) {
+    activeTOCScrollSpyObserver.disconnect();
+  }
+
+  const sections = document.querySelectorAll('.policy-section[id]:not(.hidden)');
   const tocLinks = document.querySelectorAll('.toc-link');
 
   if (!sections.length || !tocLinks.length) return;
 
-  const observer = new IntersectionObserver((entries) => {
+  activeTOCScrollSpyObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
         const id = entry.target.getAttribute('id');
@@ -147,10 +170,10 @@ function initTableOfContents() {
       }
     });
   }, {
-    rootMargin: '-20% 0px -70% 0px'
+    rootMargin: '-15% 0px -70% 0px'
   });
 
-  sections.forEach(section => observer.observe(section));
+  sections.forEach(section => activeTOCScrollSpyObserver.observe(section));
 }
 
 /* Client-side App Search/Filter (For portfolio home page) */

@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Privacy Policy — Funny Prank Calls | TechFusion</title>
-  <meta name="description" content="Official bilingual Privacy Policy for Funny Prank Calls (dev.techfusion.funnyprankcalls), published by TechFusion.">
+  <meta name="description" content="Official Privacy Policy for Funny Prank Calls (dev.techfusion.funnyprankcalls), published by TechFusion.">
   <link rel="icon" type="image/svg+xml" href="../favicon.svg">
   
   <!-- Modern Google Fonts -->
@@ -33,7 +33,7 @@
       <nav aria-label="Main Navigation">
         <ul class="nav-links">
           <li><a href="../index.html#apps" class="nav-link">All Apps</a></li>
-          <li><a href="#summary" class="nav-link">Quick Summary</a></li>
+          <li><a href="#summary-en" class="nav-link" data-lang="en">Summary</a><a href="#summary-vi" class="nav-link hidden" data-lang="vi">Tóm Tắt</a></li>
           <li><a href="#contact" class="nav-link">Support</a></li>
         </ul>
       </nav>
@@ -72,31 +72,37 @@
           <span>/</span>
           <a href="../index.html#apps">Apps</a>
           <span>/</span>
-          <span>Funny Prank Calls Privacy Policy</span>
+          <span data-lang="en">Funny Prank Calls Privacy Policy</span>
+          <span data-lang="vi" class="hidden">Chính Sách Bảo Mật Cuộc Gọi Giả Vui Nhộn</span>
         </nav>
 
         <div class="policy-title-container">
           <div>
-            <h1 class="policy-title">Privacy Policy — Funny Prank Calls</h1>
-            <p style="margin-top: 0.25rem; font-size: 1rem;">Cuộc Gọi Giả Vui Nhộn &bull; Official Privacy Documentation</p>
+            <!-- English Header Title -->
+            <div data-lang="en">
+              <h1 class="policy-title">Privacy Policy — Funny Prank Calls</h1>
+              <p style="margin-top: 0.25rem; font-size: 1rem;">Official Legal &amp; Privacy Documentation</p>
+            </div>
+            <!-- Vietnamese Header Title -->
+            <div data-lang="vi" class="hidden">
+              <h1 class="policy-title">Chính Sách Bảo Mật — Cuộc Gọi Giả Vui Nhộn</h1>
+              <p style="margin-top: 0.25rem; font-size: 1rem;">Tài Liệu Chính Sách Bảo Mật Chính Thức</p>
+            </div>
           </div>
 
-          <!-- Language Selector Tabs -->
-          <div class="language-switch-bar">
-            <button class="lang-btn active" data-lang-target="en">
+          <!-- Language Selector (Strict 2-Way Toggle) -->
+          <div class="language-switch-bar" aria-label="Language Selector">
+            <button class="lang-btn active" data-lang-target="en" title="Switch to English">
               <span>🇺🇸</span> English
             </button>
-            <button class="lang-btn" data-lang-target="vi">
+            <button class="lang-btn" data-lang-target="vi" title="Chuyển sang Tiếng Việt">
               <span>🇻🇳</span> Tiếng Việt
-            </button>
-            <button class="lang-btn" data-lang-target="all">
-              <span>🌐</span> All / Cả hai
             </button>
           </div>
         </div>
 
-        <!-- Meta Details Box -->
-        <div class="meta-details-bar">
+        <!-- Meta Details Box (English) -->
+        <div class="meta-details-bar" data-lang="en">
           <div class="meta-item">
             <span>📅</span>
             <span><strong>Effective Date:</strong> August 16, 2026</span>
@@ -121,6 +127,32 @@
           </div>
         </div>
 
+        <!-- Meta Details Box (Vietnamese) -->
+        <div class="meta-details-bar hidden" data-lang="vi">
+          <div class="meta-item">
+            <span>📅</span>
+            <span><strong>Ngày hiệu lực:</strong> 16 Tháng 8, 2026</span>
+          </div>
+          <div class="meta-item">
+            <span>🔄</span>
+            <span><strong>Cập nhật lần cuối:</strong> 16 Tháng 8, 2026</span>
+          </div>
+          <div class="meta-item">
+            <span>📦</span>
+            <span><strong>Mã ứng dụng:</strong> <code>dev.techfusion.funnyprankcalls</code></span>
+            <button class="copy-badge-btn" data-copy-text="dev.techfusion.funnyprankcalls" title="Sao chép Mã Ứng Dụng">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+              </svg>
+            </button>
+          </div>
+          <div class="meta-item">
+            <span>🏢</span>
+            <span><strong>Đơn vị phát triển:</strong> TechFusion (<a href="mailto:support@techfusion.dev">support@techfusion.dev</a>)</span>
+          </div>
+        </div>
+
       </div>
     </section>
 
@@ -129,107 +161,109 @@
       
       <!-- Interactive Sidebar Table of Contents -->
       <aside class="policy-sidebar" aria-label="Table of Contents">
-        <h3 class="sidebar-title">Table of Contents</h3>
         
         <!-- English TOC Links -->
-        <ul class="toc-list" id="toc-en">
-          <li><a href="#summary" class="toc-link">Quick Summary Table</a></li>
-          <li><a href="#en-1" class="toc-link">1. Introduction &amp; Overview</a></li>
-          <li><a href="#en-2" class="toc-link">2. 100% Simulated Call Experience</a></li>
-          <li><a href="#en-3" class="toc-link">3. Information Stored Locally</a></li>
-          <li><a href="#en-4" class="toc-link">4. AI Voice &amp; TTS Processing</a></li>
-          <li><a href="#en-5" class="toc-link">5. Advertising &amp; SDKs (AdMob/UMP)</a></li>
-          <li><a href="#en-6" class="toc-link">6. Device Permissions</a></li>
-          <li><a href="#en-7" class="toc-link">7. Children's Privacy (COPPA/GDPR-K)</a></li>
-          <li><a href="#en-8" class="toc-link">8. Data Retention &amp; Deletion</a></li>
-          <li><a href="#en-9" class="toc-link">9. Data Security (TLS &amp; HMAC)</a></li>
-          <li><a href="#en-10" class="toc-link">10. International Privacy Rights</a></li>
-          <li><a href="#en-11" class="toc-link">11. Changes to This Policy</a></li>
-          <li><a href="#en-12" class="toc-link">12. Contact Information</a></li>
-        </ul>
+        <div id="toc-en">
+          <h3 class="sidebar-title">Table of Contents</h3>
+          <ul class="toc-list">
+            <li><a href="#summary-en" class="toc-link">Quick Summary</a></li>
+            <li><a href="#en-1" class="toc-link">1. Introduction &amp; Overview</a></li>
+            <li><a href="#en-2" class="toc-link">2. 100% Simulated Call Experience</a></li>
+            <li><a href="#en-3" class="toc-link">3. Information Stored Locally</a></li>
+            <li><a href="#en-4" class="toc-link">4. AI Voice &amp; TTS Processing</a></li>
+            <li><a href="#en-5" class="toc-link">5. Advertising &amp; SDKs (AdMob/UMP)</a></li>
+            <li><a href="#en-6" class="toc-link">6. Device Permissions</a></li>
+            <li><a href="#en-7" class="toc-link">7. Children's Privacy (COPPA/GDPR-K)</a></li>
+            <li><a href="#en-8" class="toc-link">8. Data Retention &amp; Deletion</a></li>
+            <li><a href="#en-9" class="toc-link">9. Data Security (TLS &amp; HMAC)</a></li>
+            <li><a href="#en-10" class="toc-link">10. International Privacy Rights</a></li>
+            <li><a href="#en-11" class="toc-link">11. Changes to This Policy</a></li>
+            <li><a href="#en-12" class="toc-link">12. Contact Information</a></li>
+          </ul>
+        </div>
 
         <!-- Vietnamese TOC Links -->
-        <ul class="toc-list hidden" id="toc-vi">
-          <li><a href="#summary" class="toc-link">Bảng Tóm Tắt Nhanh</a></li>
-          <li><a href="#vi-1" class="toc-link">1. Giới thiệu &amp; Tổng quan</a></li>
-          <li><a href="#vi-2" class="toc-link">2. Giả lập cuộc gọi 100%</a></li>
-          <li><a href="#vi-3" class="toc-link">3. Dữ liệu lưu trữ cục bộ</a></li>
-          <li><a href="#vi-4" class="toc-link">4. Tạo giọng nói AI &amp; TTS</a></li>
-          <li><a href="#vi-5" class="toc-link">5. Quảng cáo &amp; Dịch vụ bên thứ ba</a></li>
-          <li><a href="#vi-6" class="toc-link">6. Quyền truy cập thiết bị</a></li>
-          <li><a href="#vi-7" class="toc-link">7. Quyền riêng tư trẻ em (COPPA)</a></li>
-          <li><a href="#vi-8" class="toc-link">8. Lưu trữ &amp; Xóa dữ liệu</a></li>
-          <li><a href="#vi-9" class="toc-link">9. An toàn dữ liệu</a></li>
-          <li><a href="#vi-10" class="toc-link">10. Quyền riêng tư quốc tế</a></li>
-          <li><a href="#vi-11" class="toc-link">11. Thay đổi chính sách</a></li>
-          <li><a href="#vi-12" class="toc-link">12. Thông tin liên hệ</a></li>
-        </ul>
+        <div id="toc-vi" class="hidden">
+          <h3 class="sidebar-title">Mục Lục</h3>
+          <ul class="toc-list">
+            <li><a href="#summary-vi" class="toc-link">Tóm Tắt Nhanh</a></li>
+            <li><a href="#vi-1" class="toc-link">1. Giới thiệu &amp; Tổng quan</a></li>
+            <li><a href="#vi-2" class="toc-link">2. Giả lập cuộc gọi 100%</a></li>
+            <li><a href="#vi-3" class="toc-link">3. Dữ liệu lưu trữ cục bộ</a></li>
+            <li><a href="#vi-4" class="toc-link">4. Tạo giọng nói AI &amp; TTS</a></li>
+            <li><a href="#vi-5" class="toc-link">5. Quảng cáo &amp; Dịch vụ bên thứ ba</a></li>
+            <li><a href="#vi-6" class="toc-link">6. Quyền truy cập thiết bị</a></li>
+            <li><a href="#vi-7" class="toc-link">7. Quyền riêng tư trẻ em (COPPA)</a></li>
+            <li><a href="#vi-8" class="toc-link">8. Lưu trữ &amp; Xóa dữ liệu</a></li>
+            <li><a href="#vi-9" class="toc-link">9. An toàn dữ liệu</a></li>
+            <li><a href="#vi-10" class="toc-link">10. Quyền riêng tư quốc tế</a></li>
+            <li><a href="#vi-11" class="toc-link">11. Thay đổi chính sách</a></li>
+            <li><a href="#vi-12" class="toc-link">12. Thông tin liên hệ</a></li>
+          </ul>
+        </div>
+
       </aside>
 
-      <!-- Main Policy Document -->
+      <!-- Main Policy Article -->
       <article class="policy-article">
 
-        <!-- Section: Quick Reference Summary -->
-        <section id="summary" class="policy-section">
-          <h2>Quick Reference Summary / Bảng Tóm Tắt Nhanh</h2>
-          <div class="summary-table-container">
-            <table class="summary-table">
-              <thead>
-                <tr>
-                  <th>Attribute / Thuộc tính</th>
-                  <th>Details / Chi tiết</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>App Purpose</td>
-                  <td>Simulated phone call entertainment &amp; habit-coaching tool for parents and guardians.</td>
-                </tr>
-                <tr>
-                  <td>Real Phone Calling</td>
-                  <td><strong>None.</strong> The app cannot place, receive, or route real telephone or emergency calls.</td>
-                </tr>
-                <tr>
-                  <td>User Accounts</td>
-                  <td><strong>None.</strong> No login, registration, or cloud user accounts required.</td>
-                </tr>
-                <tr>
-                  <td>Local Data Storage</td>
-                  <td>Profiles, optional child nicknames, custom topics, scripts, and UI settings are stored <strong>only on your local device</strong> (<code>SharedPreferences</code> / <code>UserDefaults</code>).</td>
-                </tr>
-                <tr>
-                  <td>Voice Synthesis</td>
-                  <td>Spoken scripts are sent via encrypted HTTPS to our Neural AI TTS backend (powered by open-source <strong>VieNeu-TTS</strong> and <strong>Kokoro-82M</strong>). Processed transiently in-memory; <strong>never retained, stored, or linked to user identity</strong>.</td>
-                </tr>
-                <tr>
-                  <td>Advertising</td>
-                  <td><strong>Google AdMob</strong> (Native, Interstitial, Rewarded). Consent managed via Google <strong>User Messaging Platform (UMP)</strong>.</td>
-                </tr>
-                <tr>
-                  <td>Target Audience</td>
-                  <td><strong>Adults (18+)</strong>. Protected by a first-run adult age gate.</td>
-                </tr>
-                <tr>
-                  <td>Data Deletion</td>
-                  <td>Deleting a profile in the app or uninstalling the app permanently removes all locally stored data immediately.</td>
-                </tr>
-                <tr>
-                  <td>Contact</td>
-                  <td><code>support@techfusion.dev</code></td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </section>
-
         <!-- ========================================== -->
-        <!-- ENGLISH PRIVACY POLICY SECTION             -->
+        <!-- ENGLISH PRIVACY POLICY                     -->
         <!-- ========================================== -->
-        <div class="lang-section-en" id="english">
+        <div class="lang-section-en">
 
-          <div style="margin-bottom: 2rem; border-bottom: 2px solid var(--accent-primary); padding-bottom: 0.5rem;">
-            <h2 style="color: var(--accent-primary); font-size: 1.85rem;">English Version</h2>
-          </div>
+          <!-- Section: English Quick Summary -->
+          <section id="summary-en" class="policy-section">
+            <h2>Quick Reference Summary</h2>
+            <div class="summary-table-container">
+              <table class="summary-table">
+                <thead>
+                  <tr>
+                    <th>Attribute</th>
+                    <th>Details</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>App Purpose</td>
+                    <td>Simulated phone call entertainment &amp; habit-coaching tool for parents and guardians.</td>
+                  </tr>
+                  <tr>
+                    <td>Real Phone Calling</td>
+                    <td><strong>None.</strong> The app cannot place, receive, or route real telephone or emergency calls.</td>
+                  </tr>
+                  <tr>
+                    <td>User Accounts</td>
+                    <td><strong>None.</strong> No login, registration, or cloud user accounts required.</td>
+                  </tr>
+                  <tr>
+                    <td>Local Data Storage</td>
+                    <td>Profiles, optional child nicknames, custom topics, scripts, and UI settings are stored <strong>only on your local device</strong> (<code>SharedPreferences</code> / <code>UserDefaults</code>).</td>
+                  </tr>
+                  <tr>
+                    <td>Voice Synthesis</td>
+                    <td>Spoken scripts are sent via encrypted HTTPS to our Neural AI TTS backend (powered by open-source <strong>VieNeu-TTS</strong> and <strong>Kokoro-82M</strong>). Processed transiently in-memory; <strong>never retained, stored, or linked to user identity</strong>.</td>
+                  </tr>
+                  <tr>
+                    <td>Advertising</td>
+                    <td><strong>Google AdMob</strong> (Native, Interstitial, Rewarded). Consent managed via Google <strong>User Messaging Platform (UMP)</strong>.</td>
+                  </tr>
+                  <tr>
+                    <td>Target Audience</td>
+                    <td><strong>Adults (18+)</strong>. Protected by a first-run adult age gate.</td>
+                  </tr>
+                  <tr>
+                    <td>Data Deletion</td>
+                    <td>Deleting a profile in the app or uninstalling the app permanently removes all locally stored data immediately.</td>
+                  </tr>
+                  <tr>
+                    <td>Contact</td>
+                    <td><code>support@techfusion.dev</code></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </section>
 
           <!-- Section 1 -->
           <section id="en-1" class="policy-section">
@@ -273,7 +307,7 @@
               <li><strong>Kokoro-82M:</strong> English synthesis by <code>@hexgrad</code></li>
             </ul>
             
-            <h4>How Speech Synthesis Works:</h4>
+            <h4 style="margin-top: 1rem; margin-bottom: 0.5rem; color: var(--text-primary);">How Speech Synthesis Works:</h4>
             <ol>
               <li>When a call is triggered or a profile is saved, the App sends the pre-written script text to our secure TTS backend server over encrypted HTTPS (TLS 1.3) protected with HMAC request signing.</li>
               <li>The spoken text contains only the caller's persona script and the optional kid nickname entered locally by the user.</li>
@@ -293,7 +327,7 @@
               <li><strong>Rewarded Video Ads:</strong> Optional short video ads that users may voluntarily choose to watch to unlock additional profile or custom topic slots.</li>
             </ul>
 
-            <h4>Data Processed by Google AdMob:</h4>
+            <h4 style="margin-top: 1rem; margin-bottom: 0.5rem; color: var(--text-primary);">Data Processed by Google AdMob:</h4>
             <p>Google AdMob may automatically collect and process certain device information, including:</p>
             <ul>
               <li>Device identifiers (such as Google Advertising ID or Apple IDFA/IDFV)</li>
@@ -302,7 +336,7 @@
             </ul>
             <p>For detailed information on how Google processes ad data, please review <a href="https://policies.google.com/technologies/ads" target="_blank" rel="noopener">Google's Privacy Policy and Terms</a>.</p>
 
-            <h4>User Consent (UMP Framework):</h4>
+            <h4 style="margin-top: 1rem; margin-bottom: 0.5rem; color: var(--text-primary);">User Consent (UMP Framework):</h4>
             <p>In regions with applicable privacy regulations (such as the European Economic Area (EEA), the United Kingdom, Switzerland, and relevant US states), we implement Google's <strong>User Messaging Platform (UMP)</strong> SDK to request your consent before serving personalized advertisements. If you decline or revoke consent, only non-personalized or contextual ads are requested.</p>
           </section>
 
@@ -315,7 +349,7 @@
               <li><code>VIBRATE</code> (Android): Used optionally to simulate realistic ring vibration during incoming calls.</li>
             </ul>
 
-            <h4>Permissions NOT Requested:</h4>
+            <h4 style="margin-top: 1rem; margin-bottom: 0.5rem; color: var(--text-primary);">Permissions NOT Requested:</h4>
             <ul>
               <li>❌ No Contacts permission</li>
               <li>❌ No Microphone or Audio Recording permission</li>
@@ -391,13 +425,62 @@
         </div>
 
         <!-- ========================================== -->
-        <!-- TIẾNG VIỆT PRIVACY POLICY SECTION          -->
+        <!-- TIẾNG VIỆT PRIVACY POLICY                  -->
         <!-- ========================================== -->
-        <div class="lang-section-vi hidden" id="tiếng-việt">
+        <div class="lang-section-vi hidden">
 
-          <div style="margin-bottom: 2rem; border-bottom: 2px solid var(--accent-primary); padding-bottom: 0.5rem;">
-            <h2 style="color: var(--accent-primary); font-size: 1.85rem;">Tiếng Việt (Vietnamese)</h2>
-          </div>
+          <!-- Section: Vietnamese Quick Summary -->
+          <section id="summary-vi" class="policy-section">
+            <h2>Bảng Tóm Tắt Nhanh</h2>
+            <div class="summary-table-container">
+              <table class="summary-table">
+                <thead>
+                  <tr>
+                    <th>Thuộc tính</th>
+                    <th>Chi tiết</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Mục đích ứng dụng</td>
+                    <td>Công cụ giả lập cuộc gọi và rèn luyện thói quen tích cực dành cho phụ huynh/người giám hộ.</td>
+                  </tr>
+                  <tr>
+                    <td>Cuộc gọi thật</td>
+                    <td><strong>Không.</strong> Ứng dụng không thể thực hiện, chuyển tiếp hay nhận bất kỳ cuộc gọi di động hoặc viễn thông thực tế nào.</td>
+                  </tr>
+                  <tr>
+                    <td>Tài khoản người dùng</td>
+                    <td><strong>Không.</strong> Không yêu cầu đăng ký, đăng nhập hay tài khoản đám mây.</td>
+                  </tr>
+                  <tr>
+                    <td>Lưu trữ dữ liệu</td>
+                    <td>Hồ sơ, biệt danh của bé, chủ đề, kịch bản tự tạo và cài đặt được lưu <strong>duy nhất trên bộ nhớ cục bộ thiết bị</strong> (<code>SharedPreferences</code> / <code>UserDefaults</code>).</td>
+                  </tr>
+                  <tr>
+                    <td>Tổng hợp giọng nói</td>
+                    <td>Lời thoại được gửi mã hóa HTTPS đến máy chủ Neural AI TTS (mô hình nguồn mở <strong>VieNeu-TTS</strong> &amp; <strong>Kokoro-82M</strong>). Xử lý tức thời trong RAM; <strong>không lưu trữ, không bán, không liên kết danh tính người dùng</strong>.</td>
+                  </tr>
+                  <tr>
+                    <td>Quảng cáo</td>
+                    <td><strong>Google AdMob</strong> (Quảng cáo tự nhiên, toàn màn hình, video có thưởng). Quản lý đồng ý qua <strong>Google UMP</strong>.</td>
+                  </tr>
+                  <tr>
+                    <td>Đối tượng sử dụng</td>
+                    <td><strong>Người lớn (18+)</strong>. Bảo vệ bằng màn hình xác thực độ tuổi người lớn khi mở app.</td>
+                  </tr>
+                  <tr>
+                    <td>Xóa dữ liệu</td>
+                    <td>Xóa hồ sơ trong ứng dụng hoặc gỡ cài đặt sẽ xóa sạch toàn bộ dữ liệu lưu trữ cục bộ ngay lập tức.</td>
+                  </tr>
+                  <tr>
+                    <td>Liên hệ hỗ trợ</td>
+                    <td><code>support@techfusion.dev</code></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </section>
 
           <!-- Section 1 -->
           <section id="vi-1" class="policy-section">
@@ -441,7 +524,7 @@
               <li><strong>Kokoro-82M:</strong> Mô hình tổng hợp giọng nói Tiếng Anh bởi tác giả <code>@hexgrad</code></li>
             </ul>
 
-            <h4>Cách thức hoạt động của tính năng tạo giọng:</h4>
+            <h4 style="margin-top: 1rem; margin-bottom: 0.5rem; color: var(--text-primary);">Cách thức hoạt động của tính năng tạo giọng:</h4>
             <ol>
               <li>Khi kích hoạt cuộc gọi hoặc lưu hồ sơ mới, ứng dụng gửi nội dung lời thoại đã soạn sẵn qua kết nối mã hóa HTTPS (TLS 1.3) được bảo vệ bằng chữ ký HMAC đến máy chủ xử lý TTS của chúng tôi.</li>
               <li>Nội dung lời thoại chỉ bao gồm kịch bản của nhân vật và tên/biệt danh tùy chọn do bạn nhập trên máy.</li>
@@ -461,7 +544,7 @@
               <li><strong>Quảng cáo video có thưởng (Rewarded Ads):</strong> Video ngắn tùy chọn để bạn chủ động xem khi muốn mở khóa thêm vị trí hồ sơ hoặc chủ đề tùy chỉnh.</li>
             </ul>
 
-            <h4>Dữ liệu do Google AdMob xử lý:</h4>
+            <h4 style="margin-top: 1rem; margin-bottom: 0.5rem; color: var(--text-primary);">Dữ liệu do Google AdMob xử lý:</h4>
             <p>Google AdMob có thể tự động thu thập và xử lý một số dữ liệu thiết bị, bao gồm:</p>
             <ul>
               <li>Mã định danh thiết bị (như Google Advertising ID hoặc Apple IDFA/IDFV)</li>
@@ -470,7 +553,7 @@
             </ul>
             <p>Để tìm hiểu chi tiết về cách Google xử lý dữ liệu quảng cáo, vui lòng xem <a href="https://policies.google.com/technologies/ads" target="_blank" rel="noopener">Chính sách Bảo mật của Google</a>.</p>
 
-            <h4>Quản lý đồng ý người dùng (UMP):</h4>
+            <h4 style="margin-top: 1rem; margin-bottom: 0.5rem; color: var(--text-primary);">Quản lý đồng ý người dùng (UMP):</h4>
             <p>Tại các khu vực pháp lý có quy định bảo vệ dữ liệu nghiêm ngặt (như EEA, Vương quốc Anh, Thụy Sĩ), chúng tôi tích hợp nền tảng <strong>Google User Messaging Platform (UMP)</strong> để xin phép bạn trước khi hiển thị quảng cáo cá nhân hóa. Nếu bạn từ chối, ứng dụng chỉ hiển thị quảng cáo không cá nhân hóa.</p>
           </section>
 
@@ -483,7 +566,7 @@
               <li><code>VIBRATE</code> (Android): Dùng để mô phỏng rung chuông chân thực khi có cuộc gọi đến.</li>
             </ul>
 
-            <h4>Các quyền KHÔNG bao giờ yêu cầu:</h4>
+            <h4 style="margin-top: 1rem; margin-bottom: 0.5rem; color: var(--text-primary);">Các quyền KHÔNG bao giờ yêu cầu:</h4>
             <ul>
               <li>❌ Không quyền truy cập Danh bạ (Contacts)</li>
               <li>❌ Không quyền Micro hay Thu âm (Microphone / Record Audio)</li>
@@ -583,7 +666,7 @@
           <ul class="footer-links">
             <li><a href="../index.html">Home</a></li>
             <li><a href="../index.html#apps">All Applications</a></li>
-            <li><a href="#summary">Quick Summary</a></li>
+            <li><a href="#summary-en" data-lang="en">Quick Summary</a><a href="#summary-vi" data-lang="vi" class="hidden">Tóm Tắt Nhanh</a></li>
           </ul>
         </div>
 
