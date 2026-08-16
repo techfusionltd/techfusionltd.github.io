@@ -1,5 +1,5 @@
 /**
- * TechFusion Web & Privacy Portal JavaScript
+ * Techfusion Ltd Web & Privacy Portal JavaScript
  */
 
 document.addEventListener('DOMContentLoaded', () => {

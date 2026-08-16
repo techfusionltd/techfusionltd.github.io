@@ -1,6 +1,6 @@
-# TechFusion GitHub Pages Website & Privacy Portal
+# Techfusion Ltd GitHub Pages Website & Privacy Portal
 
-Official repository for **[techfusionltd.github.io](https://techfusionltd.github.io)** — the landing page, app showcase, and mobile privacy policy directory for TechFusion.
+Official repository for **[techfusionltd.github.io](https://techfusionltd.github.io)** — the landing page, app showcase, and mobile privacy policy directory for Techfusion Ltd.
 
 ---
 
@@ -46,14 +46,16 @@ When you release a new app:
 
 ## 🌐 GitHub Pages Deployment Setup
 
-1. Go to your GitHub repository settings (`https://github.com/techfusionltd/techfusionltd.github.io/settings/pages` or `https://github.com/techfusion/techfusion.github.io/settings/pages`).
+1. Go to your GitHub repository settings (`https://github.com/techfusionltd/techfusionltd.github.io/settings/pages`).
 2. Under **Build and deployment > Source**, select **Deploy from a branch**.
 3. Choose the **`main`** branch and the **`/ (root)`** folder.
 4. Click **Save**. Your site will be live at `https://techfusionltd.github.io`!
 
 ---
 
-## 📧 Support & Contact
+## 📧 Support & Business Information
 
-- **Developer / Publisher:** TechFusion
+- **Company:** Techfusion Ltd
+- **Registration:** Registered business under the laws of Vietnam (Company number: 1001261052)
 - **Support Email:** `support@techfusion.dev`
+
