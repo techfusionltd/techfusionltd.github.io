@@ -13,14 +13,15 @@ Official repository for **[techfusionltd.github.io](https://techfusionltd.github
 ├── logo.png                    # Brand logo
 ├── assets/
 │   ├── logo.png                # Official Techfusion Ltd company logo
-│   └── funny-prank-calls.png   # Funny Prank Calls official app icon
+│   └── funny-prank-calls.png   # Simulated AI Calls official app icon
 ├── css/
 │   └── style.css               # Shared modern CSS design system & typography
 ├── js/
 │   └── main.js                 # Dark/light theme, bilingual switcher, TOC scrollspy, copy actions
 ├── privacy/
 │   ├── index.html              # Directory of all privacy policies
-│   └── funny-prank-calls.html  # Complete bilingual Privacy Policy for Funny Prank Calls
+│   ├── simulated-ai-calls.html # Complete bilingual Privacy Policy for Simulated AI Calls
+│   └── funny-prank-calls.html  # Backward-compatible redirect to simulated-ai-calls.html
 └── README.md                   # Documentation
 ```
 
@@ -30,7 +31,7 @@ Official repository for **[techfusionltd.github.io](https://techfusionltd.github
 
 | App Name | Package ID | Platform | Privacy Policy |
 |---|---|---|---|
-| **Funny Prank Calls** | `dev.techfusion.funnyprankcalls` | Android / iOS | [`/privacy/funny-prank-calls.html`](https://techfusionltd.github.io/privacy/funny-prank-calls.html) |
+| **Simulated AI Calls** | `dev.techfusion.funnyprankcalls` | Android / iOS | [`/privacy/simulated-ai-calls.html`](https://techfusionltd.github.io/privacy/simulated-ai-calls.html) |
 
 ---
 
@@ -39,7 +40,7 @@ Official repository for **[techfusionltd.github.io](https://techfusionltd.github
 When you release a new app:
 
 1. **Create the Policy Page**:
-   - Duplicate `privacy/funny-prank-calls.html` to `privacy/your-new-app-slug.html`.
+   - Duplicate `privacy/simulated-ai-calls.html` to `privacy/your-new-app-slug.html`.
    - Update the title, package ID, effective date, and policy sections.
 2. **Link from the Home Page**:
    - Open `index.html` and add an `<article class="app-card">` block inside the `<div class="apps-grid">` container.
