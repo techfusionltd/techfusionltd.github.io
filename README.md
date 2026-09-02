@@ -20,8 +20,9 @@ Official repository for **[techfusionltd.github.io](https://techfusionltd.github
 │   └── main.js                 # Dark/light theme, bilingual switcher, TOC scrollspy, copy actions
 ├── privacy/
 │   ├── index.html              # Directory of all privacy policies
-│   ├── habit-buddy.html        # Complete bilingual Privacy Policy for Habit Buddy: AI Voice Coach (iOS)
-│   ├── habit-buddy-ai-voice-coach.html # Alias redirect to habit-buddy.html
+│   ├── habit-hero.html         # Complete bilingual Privacy Policy for HabitHero: AI Voice Coach (iOS)
+│   ├── habit-buddy.html        # Backward-compatible redirect to habit-hero.html
+│   ├── habit-buddy-ai-voice-coach.html # Alias redirect to habit-hero.html
 │   ├── simulated-ai-calls.html # Complete bilingual Privacy Policy for Simulated AI Calls
 │   └── funny-prank-calls.html  # Backward-compatible redirect to simulated-ai-calls.html
 └── README.md                   # Documentation
@@ -33,7 +34,7 @@ Official repository for **[techfusionltd.github.io](https://techfusionltd.github
 
 | App Name | Package ID | Platform | Privacy Policy |
 |---|---|---|---|
-| **Habit Buddy: AI Voice Coach** | `dev.techfusion.funnyprankcalls` | iOS | [`/privacy/habit-buddy.html`](https://techfusionltd.github.io/privacy/habit-buddy.html) |
+| **HabitHero: AI Voice Coach** | `dev.techfusion.funnyprankcalls` | iOS | [`/privacy/habit-hero.html`](https://techfusionltd.github.io/privacy/habit-hero.html) |
 | **Simulated AI Calls** | `dev.techfusion.funnyprankcalls` | Android / iOS | [`/privacy/simulated-ai-calls.html`](https://techfusionltd.github.io/privacy/simulated-ai-calls.html) |
 
 ---

@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Privacy Policy — HabitHero: AI Voice Coach</title>
+  <meta name="description" content="Privacy Policy for HabitHero: AI Voice Coach mobile application by TechFusion.">
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+  <link rel="canonical" href="https://techfusionltd.github.io/privacy/habit-hero.html">
+  <style>
+    :root {
+      --bg: #f8fafc;
+      --card-bg: #ffffff;
+      --text: #0f172a;
+      --text-muted: #475569;
+      --border: #e2e8f0;
+      --primary: #6366f1;
+      --primary-hover: #4f46e5;
+      --primary-light: #eef2ff;
+      --accent: #10b981;
+      --accent-light: #ecfdf5;
+      --shadow: 0 4px 6px -1px rgb(0 0 0 / 0.07), 0 2px 4px -2px rgb(0 0 0 / 0.07);
+      --radius: 12px;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #0b0f19;
+        --card-bg: #131b2e;
+        --text: #f1f5f9;
+        --text-muted: #94a3b8;
+        --border: #1e293b;
+        --primary: #818cf8;
+        --primary-hover: #6366f1;
+        --primary-light: #1e1b4b;
+        --accent: #34d399;
+        --accent-light: #064e3b;
+        --shadow: 0 4px 6px -1px rgb(0 0 0 / 0.3), 0 2px 4px -2px rgb(0 0 0 / 0.3);
+      }
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      line-height: 1.65;
+      color: var(--text);
+      background-color: var(--bg);
+      padding: 24px 16px 64px;
+    }
+
+    .container {
+      max-width: 860px;
+      margin: 0 auto;
+    }
+
+    .top-nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 16px;
+      font-size: 13px;
+    }
+
+    .top-nav a {
+      color: var(--text-muted);
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-weight: 500;
+      transition: color 0.15s ease;
+    }
+
+    .top-nav a:hover {
+      color: var(--primary);
+      text-decoration: none;
+    }
+
+    header {
+      background-color: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 32px;
+      margin-bottom: 24px;
+      box-shadow: var(--shadow);
+    }
+
+    .header-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 16px;
+      margin-bottom: 16px;
+    }
+
+    h1 {
+      font-size: 28px;
+      font-weight: 700;
+      color: var(--text);
+      letter-spacing: -0.02em;
+    }
+
+    .meta-badge {
+      display: inline-block;
+      font-size: 13px;
+      font-weight: 600;
+      padding: 4px 12px;
+      border-radius: 9999px;
+      background-color: var(--primary-light);
+      color: var(--primary);
+    }
+
+    .lang-switcher {
+      display: inline-flex;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 3px;
+      gap: 4px;
+    }
+
+    .lang-btn {
+      border: none;
+      background: transparent;
+      padding: 6px 14px;
+      border-radius: 6px;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--text-muted);
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+
+    .lang-btn.active {
+      background: var(--primary);
+      color: #ffffff;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    }
+
+    .summary-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 12px;
+      margin-top: 20px;
+    }
+
+    .summary-item {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 12px 16px;
+      font-size: 13px;
+    }
+
+    .summary-item strong {
+      display: block;
+      color: var(--text-muted);
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 4px;
+    }
+
+    .content-card {
+      background-color: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 36px;
+      box-shadow: var(--shadow);
+    }
+
+    .lang-section {
+      display: none;
+    }
+
+    .lang-section.active {
+      display: block;
+    }
+
+    h2 {
+      font-size: 20px;
+      font-weight: 700;
+      margin-top: 32px;
+      margin-bottom: 12px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid var(--border);
+      color: var(--text);
+    }
+
+    h2:first-of-type {
+      margin-top: 0;
+    }
+
+    h3 {
+      font-size: 16px;
+      font-weight: 600;
+      margin-top: 20px;
+      margin-bottom: 8px;
+    }
+
+    p {
+      margin-bottom: 16px;
+      color: var(--text);
+    }
+
+    ul, ol {
+      margin-bottom: 16px;
+      padding-left: 24px;
+    }
+
+    li {
+      margin-bottom: 8px;
+    }
+
+    code {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+      font-size: 0.9em;
+      padding: 2px 6px;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 4px;
+    }
+
+    .callout {
+      background-color: var(--primary-light);
+      border-left: 4px solid var(--primary);
+      padding: 16px;
+      border-radius: 0 8px 8px 0;
+      margin: 20px 0;
+      font-size: 14px;
+    }
+
+    .callout-success {
+      background-color: var(--accent-light);
+      border-left-color: var(--accent);
+    }
+
+    a {
+      color: var(--primary);
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 40px;
+      font-size: 13px;
+      color: var(--text-muted);
+    }
+
+    .footer-links {
+      margin-top: 8px;
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+    }
+
+    @media (max-width: 640px) {
+      body {
+        padding: 16px 12px 48px;
+      }
+      header, .content-card {
+        padding: 20px;
+      }
+      h1 {
+        font-size: 22px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <nav class="top-nav" aria-label="Portal Navigation">
+      <a href="../index.html">
+        &larr; Techfusion Home
+      </a>
+      <a href="index.html">
+        Privacy Policy Directory &rarr;
+      </a>
+    </nav>
+
+    <header>
+      <div class="header-top">
+        <div>
+          <span class="meta-badge">Privacy Policy</span>
+          <h1 style="margin-top: 6px;">HabitHero: AI Voice Coach</h1>
+        </div>
+        <div class="lang-switcher">
+          <button class="lang-btn active" id="btn-en" onclick="setLang('en')">English</button>
+          <button class="lang-btn" id="btn-vi" onclick="setLang('vi')">Tiếng Việt</button>
+        </div>
+      </div>
+
+      <div class="summary-grid">
+        <div class="summary-item">
+          <strong>Developer</strong>
+          TechFusion
+        </div>
+        <div class="summary-item">
+          <strong>Application ID</strong>
+          <code>dev.techfusion.funnyprankcalls</code>
+        </div>
+        <div class="summary-item">
+          <strong>Target Audience</strong>
+          Adults &amp; Parents (18+)
+        </div>
+        <div class="summary-item">
+          <strong>Last Updated</strong>
+          September 1, 2026
+        </div>
+      </div>
+    </header>
+
+    <main class="content-card">
+      <!-- English Section -->
+      <section id="section-en" class="lang-section active">
+        <h2>1. Introduction &amp; Overview</h2>
+        <p>Welcome to <strong>HabitHero: AI Voice Coach</strong> (&ldquo;the App&rdquo;, &ldquo;we&rdquo;, &ldquo;us&rdquo;, or &ldquo;our&rdquo;), developed and published by <strong>TechFusion</strong>. We respect your privacy and are committed to transparent, privacy-first data practices.</p>
+        <p>This Privacy Policy describes how information is processed through HabitHero: AI Voice Coach, our strict data minimization architecture, and your privacy rights under applicable regulations including GDPR, CCPA/CPRA, and COPPA.</p>
+
+        <div class="callout callout-success">
+          <strong>Summary of Privacy Principles:</strong> All profile data, kid nicknames, and custom topics are stored locally on your device. We do not require user accounts, we do not track your location or contacts, and speech synthesis text is processed transiently in-memory without persistent server-side retention.
+        </div>
+
+        <h2>2. Positive Character Habit Coaching</h2>
+        <p>HabitHero is an <strong>educational habit-coaching and motivational routine tool</strong> designed for parents and adult guardians to encourage healthy daily routines in children (e.g., bedtime routines, nutritious eating, positive behavior, and tidying up).</p>
+        <ul>
+          <li><strong>No Telephony or Calling:</strong> The App does not place, receive, or route telephone, cellular, or VoIP calls.</li>
+          <li><strong>No Device Contact Access:</strong> The App cannot access device contacts, dial phone numbers, or send/read messages.</li>
+          <li><strong>Non-Emergency Tool:</strong> The App cannot contact emergency services (e.g., 911, 112, 999) and is strictly an interactive audio habit coach.</li>
+        </ul>
+
+        <h2>3. Local-Only Data Storage</h2>
+        <p>We do not require user accounts, emails, or cloud registration. All user configurations are saved <strong>solely on your local device</strong> using standard iOS storage (<code>UserDefaults</code>):</p>
+        <ul>
+          <li><strong>Kid Profiles:</strong> Custom nickname, avatar color, character persona preference, and default routine topic.</li>
+          <li><strong>Custom Topics &amp; Messages:</strong> User-authored habit topics and motivational messages.</li>
+          <li><strong>Preferences:</strong> Alert delay timer, active language setting, and adult verification status.</li>
+        </ul>
+        <p>We do not sync, upload, or transmit your saved profile data to any external server or database.</p>
+
+        <h2>4. AI Voice Generation &amp; Speech Processing</h2>
+        <p>To provide lifelike audio for character voice messages, the App uses a <strong>Neural AI Voice backend</strong> powered by open-source models: <strong>VieNeu-TTS</strong> (Vietnamese by <code>@pnnbao97</code>) and <strong>Kokoro-82M</strong> (English by <code>@hexgrad</code>).</p>
+        <ul>
+          <li><strong>Transient In-Memory Synthesis:</strong> When audio playback is triggered or a profile is saved, the motivational script is sent over encrypted HTTPS (TLS 1.3 with cryptographic HMAC-SHA256 signing) to our TTS API server. The server processes the text transiently in-memory solely to synthesize audio bytes.</li>
+          <li><strong>Local Audio Caching:</strong> Audio files are cached on your local device for instant offline playback.</li>
+          <li><strong>Zero Identity Linking:</strong> The speech server does not log, store, sell, or associate message text or audio with any personal user identity or device identifier.</li>
+        </ul>
+
+        <h2>5. Advertising &amp; Third-Party Services</h2>
+        <p>The App displays advertisements served by <strong>Google AdMob</strong> (native in-feed cards, message-end interstitials, and optional rewarded video ads to unlock additional custom slots).</p>
+        <ul>
+          <li><strong>Data Processed by Google:</strong> AdMob may collect and process device identifiers (such as Apple IDFA/IDFV), IP address, and ad interaction metrics in accordance with <a href="https://policies.google.com/technologies/ads" target="_blank" rel="noopener">Google's Privacy Policy &amp; Terms</a>.</li>
+          <li><strong>Consent Management (UMP):</strong> In jurisdictions requiring consent (such as the EEA, UK, and Switzerland), we integrate Google's User Messaging Platform (UMP) to present a certified consent dialog. If you decline, only non-personalized ads are shown.</li>
+        </ul>
+
+        <h2>6. Device Permissions</h2>
+        <p>The App requests only the absolute minimum permissions necessary to operate:</p>
+        <ul>
+          <li><code>INTERNET</code> &amp; <code>ACCESS_NETWORK_STATE</code>: Required to download synthesized character audio from our voice API and load Google AdMob ads.</li>
+          <li><em>We NEVER request access to Contacts, Microphone, Camera, Location (GPS), Call Logs, or Photo Library.</em></li>
+        </ul>
+
+        <h2>7. Children's Privacy (COPPA &amp; GDPR-K)</h2>
+        <p>HabitHero is a parenting utility operated exclusively by <strong>adults (parents and legal guardians aged 18+)</strong>. The App includes an initial adult confirmation gate upon first launch. We do not knowingly collect personal information from children under 13 (or under 16 in the EU). Any child nickname entered into the app remains strictly on the parent's device.</p>
+
+        <h2>8. Data Retention &amp; Deletion</h2>
+        <p>Because your data is stored exclusively on your device, you have complete control over it:</p>
+        <ul>
+          <li>You can delete or modify profiles and custom topics at any time inside the app.</li>
+          <li>Uninstalling the App or clearing app storage permanently deletes all profiles, cached voice files, and settings. There are no server-side copies to delete.</li>
+        </ul>
+
+        <h2>9. Contact Us</h2>
+        <p>If you have any questions or feedback regarding this Privacy Policy, please contact us at:</p>
+        <p><strong>Email:</strong> <a href="mailto:support@techfusion.dev">support@techfusion.dev</a><br>
+        <strong>Publisher:</strong> TechFusion<br>
+        <strong>Application ID:</strong> <code>dev.techfusion.funnyprankcalls</code></p>
+      </section>
+
+      <!-- Vietnamese Section -->
+      <section id="section-vi" class="lang-section">
+        <h2>1. Giới thiệu &amp; Tổng quan</h2>
+        <p>Chào mừng bạn đến với <strong>HabitHero: AI Voice Coach</strong> (&ldquo;Ứng dụng&rdquo;, &ldquo;chúng tôi&rdquo;), được phát triển và phát hành bởi <strong>TechFusion</strong>. Chúng tôi tôn trọng quyền riêng tư và cam kết bảo vệ dữ liệu của người dùng.</p>
+        <p>Chính sách bảo mật này giải thích cách dữ liệu được xử lý, nguyên tắc tối giản dữ liệu và quyền riêng tư của bạn khi sử dụng ứng dụng.</p>
+
+        <div class="callout callout-success">
+          <strong>Tóm tắt nguyên tắc bảo mật:</strong> Toàn bộ dữ liệu hồ sơ, tên bé và chủ đề tùy chỉnh được lưu trữ cục bộ trên thiết bị của bạn. Ứng dụng không yêu cầu tạo tài khoản, không theo dõi vị trí hay danh bạ, và lời thoại tạo giọng đọc AI chỉ được xử lý tạm thời trong bộ nhớ máy chủ mà không lưu trữ vĩnh viễn.
+        </div>
+
+        <h2>2. Tính năng hỗ trợ rèn thói quen tích cực</h2>
+        <p>HabitHero là <strong>công cụ hỗ trợ phụ huynh rèn luyện thói quen tích cực cho trẻ</strong> thông qua các thông điệp âm thanh động viên từ nhân vật (như giờ đi ngủ, ăn ngoan, tự giác dọn dẹp đồ chơi, chăm học).</p>
+        <ul>
+          <li><strong>Không phải cuộc gọi điện thoại:</strong> Ứng dụng KHÔNG thực hiện, chuyển tiếp hay nhận cuộc gọi di động hoặc viễn thông thực tế.</li>
+          <li><strong>Không truy cập danh bạ:</strong> Ứng dụng không thể quay số, không truy cập danh bạ, và không đọc/gửi tin nhắn.</li>
+          <li><strong>Không dùng khẩn cấp:</strong> Ứng dụng <strong>KHÔNG THỂ gọi cứu hộ khẩn cấp</strong> (như 113, 114, 115, 911) và chỉ phục vụ mục đích hỗ trợ rèn thói quen gia đình.</li>
+        </ul>
+
+        <h2>3. Dữ liệu chỉ lưu trên thiết bị</h2>
+        <p>Ứng dụng không yêu cầu tạo tài khoản hay đăng ký email. Mọi thông tin do bạn thiết lập được lưu trữ <strong>hoàn toàn trên máy</strong> (<code>UserDefaults</code> trên iOS):</p>
+        <ul>
+          <li><strong>Hồ sơ bé:</strong> Tên/biệt danh tùy chọn, màu đại diện, nhân vật đồng hành và chủ đề mặc định.</li>
+          <li><strong>Chủ đề &amp; Lời thoại tùy chỉnh:</strong> Kịch bản động viên do bạn tự soạn thảo.</li>
+          <li><strong>Cài đặt:</strong> Thời gian đếm ngược, ngôn ngữ và xác nhận độ tuổi người lớn.</li>
+        </ul>
+        <p>Chúng tôi không đồng bộ hay tải hồ sơ của bạn lên bất kỳ máy chủ từ xa nào.</p>
+
+        <h2>4. Tạo giọng nói AI &amp; Xử lý Text-to-Speech</h2>
+        <p>Để phát âm thanh sống động cho các nhân vật, ứng dụng sử dụng <strong>Bộ giọng AI Neural</strong> với các mô hình mã nguồn mở: <strong>VieNeu-TTS</strong> (Tiếng Việt bởi <code>@pnnbao97</code>) và <strong>Kokoro-82M</strong> (Tiếng Anh bởi <code>@hexgrad</code>).</p>
+        <ul>
+          <li><strong>Xử lý tạm thời trong bộ nhớ:</strong> Khi phát âm thanh hoặc lưu hồ sơ, lời thoại được gửi qua kết nối bảo mật HTTPS (TLS 1.3 và chữ ký HMAC) tới máy chủ TTS. Máy chủ chỉ xử lý tạm thời trong RAM để tạo tệp âm thanh.</li>
+          <li><strong>Lưu đệm trên máy:</strong> Tệp âm thanh sau khi tạo được lưu đệm trên máy bạn để phát lại ngoại tuyến.</li>
+          <li><strong>Không liên kết danh tính:</strong> Máy chủ không lưu trữ, không bán và không liên kết lời thoại với bất kỳ danh tính người dùng nào.</li>
+        </ul>
+
+        <h2>5. Quảng cáo &amp; Dịch vụ bên thứ ba</h2>
+        <p>Ứng dụng hiển thị quảng cáo qua mạng lưới <strong>Google AdMob</strong> (quảng cáo tự nhiên trên trang chủ, quảng cáo toàn màn hình và video có thưởng để mở thêm vị trí tùy chỉnh).</p>
+        <ul>
+          <li><strong>Dữ liệu do Google xử lý:</strong> Google AdMob có thể xử lý mã định danh thiết bị (Apple IDFA/IDFV), địa chỉ IP và số liệu tương tác theo <a href="https://policies.google.com/technologies/ads" target="_blank" rel="noopener">Chính sách Bảo mật của Google</a>.</li>
+          <li><strong>Quản lý đồng ý (UMP):</strong> Tại các khu vực như EEA, Anh, Thụy Sĩ, chúng tôi sử dụng Google UMP để xin ý kiến của bạn về quảng cáo cá nhân hóa.</li>
+        </ul>
+
+        <h2>6. Quyền truy cập thiết bị</h2>
+        <p>Ứng dụng chỉ yêu cầu quyền tối thiểu:</p>
+        <ul>
+          <li><code>INTERNET</code> &amp; <code>ACCESS_NETWORK_STATE</code>: Tải âm thanh giọng nói AI và tải quảng cáo AdMob.</li>
+          <li><em>TUYỆT ĐỐI KHÔNG yêu cầu quyền Danh bạ, Micro thu âm, Camera, Vị trí GPS hay Thư viện ảnh.</em></li>
+        </ul>
+
+        <h2>7. Quyền riêng tư của trẻ em</h2>
+        <p>Ứng dụng là công cụ dành riêng cho <strong>người lớn (cha mẹ, người giám hộ từ 18 tuổi trở lên)</strong> thao tác. Chúng tôi không chủ động thu thập thông tin cá nhân của trẻ em dưới 13 tuổi (hoặc dưới 16 tuổi tại EU).</p>
+
+        <h2>8. Xóa dữ liệu</h2>
+        <p>Toàn bộ quyền kiểm soát dữ liệu thuộc về bạn:</p>
+        <ul>
+          <li>Bạn có thể chỉnh sửa hoặc xóa hồ sơ bất cứ lúc nào trong ứng dụng.</li>
+          <li>Gỡ cài đặt ứng dụng hoặc xóa dữ liệu ứng dụng trong Cài đặt điện thoại sẽ xóa vĩnh viễn toàn bộ dữ liệu trên thiết bị. Không có dữ liệu lưu trữ trên máy chủ.</li>
+        </ul>
+
+        <h2>9. Thông tin liên hệ</h2>
+        <p>Mọi thắc mắc hoặc yêu cầu liên quan đến chính sách bảo mật, vui lòng liên hệ:</p>
+        <p><strong>Email:</strong> <a href="mailto:support@techfusion.dev">support@techfusion.dev</a><br>
+        <strong>Nhà phát triển:</strong> TechFusion<br>
+        <strong>Mã ứng dụng:</strong> <code>dev.techfusion.funnyprankcalls</code></p>
+      </section>
+    </main>
+
+    <footer>
+      <p>&copy; 2026 TechFusion &bull; HabitHero: AI Voice Coach &bull; All rights reserved.</p>
+      <div class="footer-links">
+        <a href="../index.html">Techfusion Home</a> &bull;
+        <a href="index.html">Privacy Directory</a> &bull;
+        <a href="mailto:support@techfusion.dev">Contact Support</a>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    function setLang(lang) {
+      document.querySelectorAll('.lang-section').forEach(el => el.classList.remove('active'));
+      document.querySelectorAll('.lang-btn').forEach(el => el.classList.remove('active'));
+      
+      const targetSection = document.getElementById('section-' + lang);
+      const targetBtn = document.getElementById('btn-' + lang);
+      if (targetSection) targetSection.classList.add('active');
+      if (targetBtn) targetBtn.classList.add('active');
+      document.documentElement.lang = lang;
+      try {
+        localStorage.setItem('tf_habit_buddy_lang', lang);
+      } catch (e) {}
+    }
+
+    // Restore saved language or detect browser preference on load
+    document.addEventListener('DOMContentLoaded', () => {
+      let preferredLang = 'en';
+      try {
+        const saved = localStorage.getItem('tf_habit_buddy_lang');
+        if (saved) {
+          preferredLang = saved;
+        } else {
+          const userLangs = navigator.languages || [navigator.language || 'en'];
+          for (const l of userLangs) {
+            if (l && l.toLowerCase().startsWith('vi')) {
+              preferredLang = 'vi';
+              break;
+            }
+          }
+        }
+      } catch (e) {}
+      setLang(preferredLang);
+    });
+  </script>
+</body>
+</html>
