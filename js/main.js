@@ -45,30 +45,28 @@ function updateThemeIcon(theme) {
   }
 }
 
-/* Detect Browser Preferred Language (defaults to 'vi' if Vietnamese, otherwise 'en') */
+/* Detect Browser Preferred Language ('vi', 'zh-Hant' for TW/HK/MO, 'zh-Hans' for other Chinese, otherwise 'en') */
 function detectBrowserLanguage() {
   const userLangs = navigator.languages || [navigator.language || navigator.userLanguage || 'en'];
-  for (const lang of userLangs) {
-    if (lang && lang.toLowerCase().startsWith('vi')) {
-      return 'vi';
-    }
+  for (const raw of userLangs) {
+    const lang = (raw || '').toLowerCase();
+    if (lang.startsWith('vi')) return 'vi';
+    if (lang.startsWith('zh')) return /hant|-tw|-hk|-mo/.test(lang) ? 'zh-Hant' : 'zh-Hans';
   }
   return 'en';
 }
 
-/* Single Active Language Switcher (EN vs VI) */
+/* Single Active Language Switcher: the page's [data-lang-target] buttons list the languages it offers */
 function initLanguageSwitcher() {
   const langButtons = document.querySelectorAll('[data-lang-target]');
-  const enElements = document.querySelectorAll('.lang-section-en, [data-lang="en"]');
-  const viElements = document.querySelectorAll('.lang-section-vi, [data-lang="vi"]');
-  const tocEn = document.getElementById('toc-en');
-  const tocVi = document.getElementById('toc-vi');
 
   if (!langButtons.length) return;
 
+  const langs = Array.from(langButtons, btn => btn.dataset.langTarget);
+
   function switchLang(lang) {
-    // Strictly enforce single language: 'vi' or 'en'
-    const activeLang = (lang === 'vi') ? 'vi' : 'en';
+    // Strictly enforce a single language the page offers, falling back to 'en'
+    const activeLang = langs.includes(lang) ? lang : 'en';
 
     // Update html lang attribute
     document.documentElement.setAttribute('lang', activeLang);
@@ -78,17 +76,10 @@ function initLanguageSwitcher() {
       btn.classList.toggle('active', btn.dataset.langTarget === activeLang);
     });
 
-    if (activeLang === 'vi') {
-      enElements.forEach(el => el.classList.add('hidden'));
-      viElements.forEach(el => el.classList.remove('hidden'));
-      if (tocEn) tocEn.classList.add('hidden');
-      if (tocVi) tocVi.classList.remove('hidden');
-    } else {
-      viElements.forEach(el => el.classList.add('hidden'));
-      enElements.forEach(el => el.classList.remove('hidden'));
-      if (tocVi) tocVi.classList.add('hidden');
-      if (tocEn) tocEn.classList.remove('hidden');
-    }
+    langs.forEach(l => {
+      document.querySelectorAll(`.lang-section-${l}, [data-lang="${l}"], #toc-${l}`)
+        .forEach(el => el.classList.toggle('hidden', l !== activeLang));
+    });
 
     // Refresh scrollspy for visible sections
     initTableOfContents();

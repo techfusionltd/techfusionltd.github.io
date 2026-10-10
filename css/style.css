@@ -457,6 +457,12 @@ code {
   color: #fff;
 }
 
+.app-icon-muc-thuoc {
+  background: #b3261e;
+  color: #fff;
+  font-weight: 700;
+}
+
 .app-icon-placeholder {
   background: var(--bg-surface);
   border: 1px dashed var(--border-subtle);
@@ -634,6 +640,7 @@ code {
   border: 1px solid var(--border-subtle);
   border-radius: var(--radius-md);
   padding: 0.25rem;
+  flex-wrap: wrap;
 }
 
 .lang-btn {
@@ -843,6 +850,58 @@ code {
 
 .highlight-box p:last-child {
   margin-bottom: 0;
+}
+
+/* App Landing Pages (screenshot strip, FAQ, language links) */
+a.lang-btn:hover {
+  text-decoration: none;
+}
+
+.screens {
+  display: flex;
+  gap: 1.25rem;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  padding-bottom: 1rem;
+}
+
+.screens figure {
+  flex: 0 0 220px;
+  scroll-snap-align: start;
+}
+
+.screens img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-subtle);
+  box-shadow: var(--shadow-md);
+}
+
+.screens figcaption {
+  margin-top: 0.6rem;
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  text-align: center;
+}
+
+.faq details {
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  padding: 1rem 1.25rem;
+  margin-bottom: 0.75rem;
+}
+
+.faq summary {
+  cursor: pointer;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.faq details p {
+  margin-top: 0.75rem;
 }
 
 /* Footer */

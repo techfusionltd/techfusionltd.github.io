@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mực Thước – Luban Ruler (Feng Shui Ruler) for doors, furniture and altars</title>
+  <meta name="description" content="Mực Thước is a Luban ruler app for Android. Check doors on the 52.2 cm clear-opening ruler, furniture on the 42.9 cm ruler and altars on the 38.8 cm ruler. See good or bad, how many mm to the section edge, and the nearest good size.">
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+  <link rel="canonical" href="https://techfusionltd.github.io/muc-thuoc/en.html">
+  <link rel="alternate" hreflang="vi" href="https://techfusionltd.github.io/muc-thuoc/">
+  <link rel="alternate" hreflang="en" href="https://techfusionltd.github.io/muc-thuoc/en.html">
+  <link rel="alternate" hreflang="zh-Hans" href="https://techfusionltd.github.io/muc-thuoc/zh-hans.html">
+  <link rel="alternate" hreflang="zh-Hant" href="https://techfusionltd.github.io/muc-thuoc/zh-hant.html">
+  <link rel="alternate" hreflang="x-default" href="https://techfusionltd.github.io/muc-thuoc/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Mực Thước – Luban Ruler">
+  <meta property="og:description" content="Pick the item, enter the size, and see at once whether it is good and the nearest good size. 52.2 · 42.9 · 38.8 cm rulers.">
+  <meta property="og:image" content="https://techfusionltd.github.io/assets/muc-thuoc/og.jpg">
+  <meta property="og:url" content="https://techfusionltd.github.io/muc-thuoc/en.html">
+
+  <!-- Modern Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="../css/style.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "MobileApplication",
+    "name": "Mực Thước – Luban Ruler",
+    "alternateName": ["Mực Thước", "墨尺", "Luban ruler", "Feng shui ruler"],
+    "inLanguage": "en",
+    "operatingSystem": "Android",
+    "applicationCategory": "UtilitiesApplication",
+    "description": "A Luban (feng shui) ruler app: doors on the 52.2 cm clear-opening ruler, furniture on the 42.9 cm ruler and altars on the 38.8 cm ruler. Shows good, near the edge or bad with the distance to the section edge, suggests the nearest good size, checks width × height for doors, and saves sizes in projects grouped by room.",
+    "url": "https://techfusionltd.github.io/muc-thuoc/en.html",
+    "downloadUrl": "https://play.google.com/store/apps/details?id=dev.techfusion.luban",
+    "screenshot": [
+      "https://techfusionltd.github.io/assets/muc-thuoc/ruler.webp",
+      "https://techfusionltd.github.io/assets/muc-thuoc/suggest.webp",
+      "https://techfusionltd.github.io/assets/muc-thuoc/grid.webp"
+    ],
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+    "publisher": { "@type": "Organization", "name": "Techfusion Ltd", "url": "https://techfusionltd.github.io/", "email": "support@techfusion.dev" }
+  }
+  </script>
+</head>
+<body>
+
+  <!-- Site Navigation Header -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="../index.html" class="brand" aria-label="Techfusion Ltd Home">
+        <img src="../assets/logo.png" class="brand-logo" alt="Techfusion Ltd Logo" width="36" height="36">
+        <span class="brand-text">Techfusion Ltd</span>
+        <span class="brand-badge">Mực Thước</span>
+      </a>
+
+      <nav aria-label="Main Navigation">
+        <ul class="nav-links">
+          <li><a href="../index.html#apps" class="nav-link">All Apps</a></li>
+          <li><a href="#features" class="nav-link">Features</a></li>
+          <li><a href="#rulers" class="nav-link">The Rulers</a></li>
+          <li><a href="#faq" class="nav-link">FAQ</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-actions">
+        <button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle Dark / Light Theme" title="Toggle Theme">
+          <svg id="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+          </svg>
+          <svg id="moon-icon" style="display:none;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content Area -->
+  <main class="main-content">
+
+    <!-- App Header Bar -->
+    <section class="policy-header">
+      <div class="container">
+
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <a href="../index.html">Techfusion Ltd</a>
+          <span>/</span>
+          <a href="../index.html#apps">Apps</a>
+          <span>/</span>
+          <span>Mực Thước</span>
+        </nav>
+
+        <div class="policy-title-container">
+          <div style="display: flex; align-items: center; gap: 1.25rem; flex-wrap: wrap;">
+            <div class="app-icon app-icon-muc-thuoc" style="box-shadow: var(--shadow-md);">墨</div>
+            <div>
+              <h1 class="policy-title">Mực Thước – Luban Ruler</h1>
+              <p style="margin-top: 0.25rem; font-size: 1rem;">Android · Free · No account · iOS version in development</p>
+            </div>
+          </div>
+
+          <nav class="language-switch-bar" aria-label="Language Selector">
+            <a class="lang-btn active" href="en.html" hreflang="en" aria-current="page">English</a>
+            <a class="lang-btn" href="./" hreflang="vi">Tiếng Việt</a>
+            <a class="lang-btn" href="zh-hans.html" hreflang="zh-Hans">简体中文</a>
+            <a class="lang-btn" href="zh-hant.html" hreflang="zh-Hant">繁體中文</a>
+          </nav>
+        </div>
+
+        <p style="font-size: 1.1rem; max-width: 760px; margin-bottom: 1rem;">
+          A Luban ruler for the person holding the tape: pick the item, enter the size, and see at once whether it is good, how many millimetres it sits from the section edge, and the nearest good size.
+        </p>
+        <p style="font-size: 0.9rem; color: var(--text-muted); max-width: 760px; margin-bottom: 1.5rem;">
+          The app is in Vietnamese today. English and Chinese versions are on the way.
+        </p>
+
+        <div class="hero-actions" style="justify-content: flex-start;">
+          <a href="https://play.google.com/store/apps/details?id=dev.techfusion.luban" class="btn btn-primary" rel="noopener">Get it on Google Play</a>
+          <a href="../privacy/muc-thuoc.html" class="btn btn-secondary">Privacy Policy</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Screenshots -->
+    <section class="section" aria-label="Screenshots">
+      <div class="container">
+        <div class="screens">
+          <figure>
+            <img src="../assets/muc-thuoc/ruler.webp" width="540" height="1112" alt="Main door 1260 mm wide: good, Thiên Tài section on the 52.2 cm ruler, good on all 3 rulers">
+            <figcaption>One verdict across all 3 rulers</figcaption>
+          </figure>
+          <figure>
+            <img src="../assets/muc-thuoc/suggest.webp" width="540" height="1112" loading="lazy" alt="Room door 900 mm wide: bad, Cô Độc section, suggests 843 mm or 984 mm">
+            <figcaption>Bad size, with the nearest good sizes</figcaption>
+          </figure>
+          <figure>
+            <img src="../assets/muc-thuoc/grid.webp" width="540" height="1112" loading="lazy" alt="Width × height suggestion grid for a main door, 50 mm steps">
+            <figcaption>Width × height grid for doors</figcaption>
+          </figure>
+          <figure>
+            <img src="../assets/muc-thuoc/presets.webp" width="540" height="1112" loading="lazy" alt="Item picker: doors, gate, light well, kitchen counter, bed, wardrobe">
+            <figcaption>Pick the item, the app picks the ruler</figcaption>
+          </figure>
+          <figure>
+            <img src="../assets/muc-thuoc/altar.webp" width="540" height="1112" loading="lazy" alt="Standing altar 1270 mm wide: good, Vượng section on the 38.8 cm ruler, 3 of 3 sizes good">
+            <figcaption>Altars: width × depth × height</figcaption>
+          </figure>
+          <figure>
+            <img src="../assets/muc-thuoc/items.webp" width="540" height="1112" loading="lazy" alt="A project's saved items, grouped by room">
+            <figcaption>Save sizes in projects</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- Features -->
+    <section id="features" class="section" style="background-color: var(--bg-surface);">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Features</h2>
+          <p class="section-desc">A measuring tool for the home that explains every number instead of only painting it red or black.</p>
+        </div>
+
+        <div class="features-grid">
+          <div class="feature-box">
+            <div class="feature-box-icon">📏</div>
+            <h3 class="feature-box-title">The right ruler for each item</h3>
+            <p class="feature-box-desc">Doors and openings are measured clear (inside the frame) on the 52.2 cm ruler. Furniture and masonry are measured overall on the 42.9 cm ruler. Altars and graves use the 38.8 cm ruler. You pick the item; the app picks the ruler.</p>
+          </div>
+          <div class="feature-box">
+            <div class="feature-box-icon">✅</div>
+            <h3 class="feature-box-title">A verdict with its margin</h3>
+            <p class="feature-box-desc">Good, good but near the edge, or bad, with the section and sub-section names and the millimetres left to the section edge. Every verdict has a word and a symbol, never color alone.</p>
+          </div>
+          <div class="feature-box">
+            <div class="feature-box-icon">🎯</div>
+            <h3 class="feature-box-title">Nearest good size</h3>
+            <p class="feature-box-desc">For a bad size, the app suggests the nearest good size below and above. The “Good ▶” button jumps to the next good size, rounded to the step you choose.</p>
+          </div>
+          <div class="feature-box">
+            <div class="feature-box-icon">🚪</div>
+            <h3 class="feature-box-title">Width × height grid</h3>
+            <p class="feature-box-desc">A door needs both its width and its height to be good. The grid shows every pair around your size in 5 to 50 mm steps, plus the closest pairs where both pass.</p>
+          </div>
+          <div class="feature-box">
+            <div class="feature-box-icon">🗂️</div>
+            <h3 class="feature-box-title">Projects for the whole house</h3>
+            <p class="feature-box-desc">Save each item by area, such as Ground floor or Altar room, add a photo if you like, and share the list with your builder through any messaging app.</p>
+          </div>
+          <div class="feature-box">
+            <div class="feature-box-icon">⚙️</div>
+            <h3 class="feature-box-title">Choose the ruler your source uses</h3>
+            <p class="feature-box-desc">Sources disagree: 52.2 or 52 cm, 38.8 or 39 cm. Choose in Settings and saved results are recalculated. The near-edge tolerance and rounding step are adjustable too.</p>
+          </div>
+          <div class="feature-box">
+            <div class="feature-box-icon">🔒</div>
+            <h3 class="feature-box-title">No account, data stays on the phone</h3>
+            <p class="feature-box-desc">Projects and photos are stored only on your phone. The ruler works offline, up to 50 m.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- The three rulers -->
+    <section id="rulers" class="section">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">The three Luban rulers used in Vietnam</h2>
+          <p class="section-desc">Each ruler is divided into good (red) and bad (black) sections that repeat in a cycle. The item decides which ruler to use and how to measure.</p>
+        </div>
+
+        <div class="summary-table-container">
+          <table class="summary-table">
+            <thead>
+              <tr>
+                <th>Ruler</th>
+                <th>Cycle</th>
+                <th>Used for</th>
+                <th>Measure</th>
+                <th>Good (red)</th>
+                <th>Bad (black)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Thông thủy 52.2 cm</td>
+                <td>522 mm, 8 sections</td>
+                <td>Doors, windows, gates, garage doors, light wells, vents</td>
+                <td>Clear opening</td>
+                <td>Quý Nhân, Thiên Tài, Nhân Lộc, Tể Tướng</td>
+                <td>Hiểm Họa, Thiên Tai, Cô Độc, Thiên Tặc</td>
+              </tr>
+              <tr>
+                <td>Dương trạch 42.9 cm (文公尺)</td>
+                <td>429 mm, 8 sections</td>
+                <td>Kitchen counters, beds, cabinets, tables, stair steps, masonry</td>
+                <td>Overall</td>
+                <td>Tài 財, Nghĩa 義, Quan 官, Bản 本</td>
+                <td>Bệnh 病, Ly 離, Kiếp 劫, Hại 害</td>
+              </tr>
+              <tr>
+                <td>Âm phần 38.8 cm (丁蘭尺)</td>
+                <td>388 mm, 10 sections</td>
+                <td>Altars, altar cabinets, God of Wealth altars, graves</td>
+                <td>Overall</td>
+                <td>Đinh 丁, Vượng 旺, Nghĩa 義, Quan 官, Hưng 興, Tài 財</td>
+                <td>Hại 害, Khổ 苦, Tử 死, Thất 失</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="highlight-box">
+          <p><strong>How it works:</strong> subtract whole cycles from the size and see which section the remainder falls in. A main door 1260 mm wide on the 52.2 cm ruler: 1260 − 2 × 522 = 216 mm, inside Thiên Tài (195.75–261 mm), so it is good. The nearest bad edge is at 195.75 mm, 20.25 mm away.</p>
+        </div>
+        <p><strong>Clear opening</strong> is the open space inside the frame, without the door leaf or frame. <strong>Overall</strong> is the outermost size of the object.</p>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq" class="section" style="background-color: var(--bg-surface);">
+      <div class="container faq" style="max-width: 860px;">
+        <div class="section-header">
+          <h2 class="section-title">FAQ</h2>
+        </div>
+
+        <details open>
+          <summary>What is a Luban ruler?</summary>
+          <p>A Luban ruler (thước Lỗ Ban, 魯班尺) is a folk measuring tape used to choose sizes for houses, furniture and altars. It is named after Lu Ban, the patron of carpenters. Each ruler is divided into good (red) and bad (black) sections that repeat in a cycle. Vietnam commonly uses three: 52.2 cm, 42.9 cm and 38.8 cm.</p>
+        </details>
+        <details>
+          <summary>Which ruler should I use for a door?</summary>
+          <p>The 52.2 cm thông thủy ruler, measured as a clear opening: the open space inside the door frame, without the leaf. Check both width and height. Mực Thước shows “2/2” when both are good, and the width × height grid finds pairs where both pass.</p>
+        </details>
+        <details>
+          <summary>Which ruler should I use for an altar?</summary>
+          <p>The 38.8 cm âm phần ruler (丁蘭尺, Đinh Lan), measured overall: the outermost size of the altar. Check width, depth and height.</p>
+        </details>
+        <details>
+          <summary>Why do websites and apps give different results?</summary>
+          <p>Because sources disagree: the clear-opening ruler is given as 52.2 or 52 cm, the altar ruler as 38.8 or 39 cm, and some use the 38.8 cm ruler for all furniture. Many common sizes also sit close to a section edge, so a few millimetres change the verdict. Mực Thước names the ruler behind every result, lets you choose the variant in Settings, and flags “near the edge” when a size is closer than your tolerance.</p>
+        </details>
+        <details>
+          <summary>Is it free?</summary>
+          <p>The app and the ruler are free, with 1 project. A one-time Google Play purchase unlocks unlimited projects and removes ads, or you can buy ad removal alone. The free version shows one small banner on the project list. It never covers the ruler or the verdict.</p>
+        </details>
+        <details>
+          <summary>Does it need an internet connection or an account?</summary>
+          <p>No account is needed. The ruler and projects work offline. The network is only used to load ads and for Google Play purchases.</p>
+        </details>
+        <details>
+          <summary>Does it replace building codes?</summary>
+          <p>No. The Luban ruler is a custom for reference. Door, stair and railing sizes must still follow building codes and engineering advice.</p>
+        </details>
+      </div>
+    </section>
+
+    <!-- Support & Contact Section -->
+    <section id="contact" class="section">
+      <div class="container">
+        <div class="highlight-box" style="background-color: var(--bg-secondary); border: 1px solid var(--border-subtle); border-left: 4px solid var(--accent-primary); border-radius: var(--radius-lg); padding: 2rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1.5rem;">
+          <div>
+            <h2 style="font-size: 1.5rem; margin-bottom: 0.5rem;">Feedback &amp; Support</h2>
+            <p style="margin-bottom: 0.25rem;">Does a result disagree with your tape, or is an item missing? Write to us.</p>
+          </div>
+          <div>
+            <a href="mailto:support@techfusion.dev" class="btn btn-primary">support@techfusion.dev</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Global Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <div class="brand" style="margin-bottom: 0.75rem;">
+            <img src="../assets/logo.png" class="brand-logo" alt="Techfusion Ltd Logo" width="32" height="32">
+            <span class="brand-text">Techfusion Ltd</span>
+          </div>
+          <p>Delivering modern, privacy-focused mobile software applications and interactive tools.</p>
+          <p style="font-size: 0.82rem; color: var(--text-muted); margin-top: 0.5rem; line-height: 1.4;">
+            Techfusion Ltd is a registered business under the laws of Vietnam.<br>Company number: 1001261052
+          </p>
+        </div>
+
+        <div>
+          <h4 class="footer-heading">Mực Thước</h4>
+          <ul class="footer-links">
+            <li><a href="https://play.google.com/store/apps/details?id=dev.techfusion.luban" rel="noopener">Google Play</a></li>
+            <li><a href="../privacy/muc-thuoc.html">Privacy Policy</a></li>
+            <li><a href="../index.html#apps">All Applications</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-heading">Support</h4>
+          <ul class="footer-links">
+            <li><a href="mailto:support@techfusion.dev">support@techfusion.dev</a></li>
+            <li><a href="https://github.com/techfusionltd" target="_blank" rel="noopener">GitHub Organization</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>&copy; 2026 Techfusion Ltd. All rights reserved.</div>
+        <div>Hosted on GitHub Pages &bull; techfusionltd.github.io</div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+</body>
+</html>

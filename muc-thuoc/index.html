@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mực Thước – Thước Lỗ Ban: tra cung tốt xấu cho cửa, nội thất, bàn thờ</title>
+  <meta name="description" content="Mực Thước là ứng dụng thước Lỗ Ban cho Android. Đo cửa trên thước thông thủy 52,2 cm, nội thất trên thước 42,9 cm, bàn thờ trên thước 38,8 cm. Báo tốt hay xấu, cách ranh cung bao nhiêu mm và gợi ý cỡ đẹp gần nhất.">
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+  <link rel="canonical" href="https://techfusionltd.github.io/muc-thuoc/">
+  <link rel="alternate" hreflang="vi" href="https://techfusionltd.github.io/muc-thuoc/">
+  <link rel="alternate" hreflang="en" href="https://techfusionltd.github.io/muc-thuoc/en.html">
+  <link rel="alternate" hreflang="zh-Hans" href="https://techfusionltd.github.io/muc-thuoc/zh-hans.html">
+  <link rel="alternate" hreflang="zh-Hant" href="https://techfusionltd.github.io/muc-thuoc/zh-hant.html">
+  <link rel="alternate" hreflang="x-default" href="https://techfusionltd.github.io/muc-thuoc/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Mực Thước – Thước Lỗ Ban">
+  <meta property="og:description" content="Chọn hạng mục, nhập kích thước, biết ngay tốt hay xấu và cỡ đẹp gần nhất. Thước 52,2 · 42,9 · 38,8 cm.">
+  <meta property="og:image" content="https://techfusionltd.github.io/assets/muc-thuoc/og.jpg">
+  <meta property="og:url" content="https://techfusionltd.github.io/muc-thuoc/">
+
+  <!-- Modern Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="../css/style.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "MobileApplication",
+    "name": "Mực Thước – Thước Lỗ Ban",
+    "alternateName": ["Mực Thước", "墨尺", "Thước Lỗ Ban"],
+    "inLanguage": "vi",
+    "operatingSystem": "Android",
+    "applicationCategory": "UtilitiesApplication",
+    "description": "Ứng dụng thước Lỗ Ban: đo cửa trên thước thông thủy 52,2 cm (lọt lòng), nội thất trên thước dương trạch 42,9 cm và bàn thờ trên thước âm phần 38,8 cm (phủ bì). Báo tốt, sát ranh hoặc xấu kèm khoảng cách tới ranh cung, gợi ý cỡ đẹp gần nhất, lưới Rộng × Cao cho cửa và dự án lưu theo khu vực.",
+    "url": "https://techfusionltd.github.io/muc-thuoc/",
+    "downloadUrl": "https://play.google.com/store/apps/details?id=dev.techfusion.luban",
+    "screenshot": [
+      "https://techfusionltd.github.io/assets/muc-thuoc/ruler.webp",
+      "https://techfusionltd.github.io/assets/muc-thuoc/suggest.webp",
+      "https://techfusionltd.github.io/assets/muc-thuoc/grid.webp"
+    ],
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "VND" },
+    "publisher": { "@type": "Organization", "name": "Techfusion Ltd", "url": "https://techfusionltd.github.io/", "email": "support@techfusion.dev" }
+  }
+  </script>
+</head>
+<body>
+
+  <!-- Site Navigation Header -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="../index.html" class="brand" aria-label="Techfusion Ltd Home">
+        <img src="../assets/logo.png" class="brand-logo" alt="Techfusion Ltd Logo" width="36" height="36">
+        <span class="brand-text">Techfusion Ltd</span>
+        <span class="brand-badge">Mực Thước</span>
+      </a>
+
+      <nav aria-label="Main Navigation">
+        <ul class="nav-links">
+          <li><a href="../index.html#apps" class="nav-link">Ứng dụng</a></li>
+          <li><a href="#features" class="nav-link">Tính năng</a></li>
+          <li><a href="#rulers" class="nav-link">Ba thước</a></li>
+          <li><a href="#faq" class="nav-link">Hỏi đáp</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-actions">
+        <button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle Dark / Light Theme" title="Toggle Theme">
+          <svg id="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+          </svg>
+          <svg id="moon-icon" style="display:none;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content Area -->
+  <main class="main-content">
+
+    <!-- App Header Bar -->
+    <section class="policy-header">
+      <div class="container">
+
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <a href="../index.html">Techfusion Ltd</a>
+          <span>/</span>
+          <a href="../index.html#apps">Ứng dụng</a>
+          <span>/</span>
+          <span>Mực Thước</span>
+        </nav>
+
+        <div class="policy-title-container">
+          <div style="display: flex; align-items: center; gap: 1.25rem; flex-wrap: wrap;">
+            <div class="app-icon app-icon-muc-thuoc" style="box-shadow: var(--shadow-md);">墨</div>
+            <div>
+              <h1 class="policy-title">Mực Thước – Thước Lỗ Ban</h1>
+              <p style="margin-top: 0.25rem; font-size: 1rem;">Android · Miễn phí · Không cần tài khoản · Bản iOS đang phát triển</p>
+            </div>
+          </div>
+
+          <nav class="language-switch-bar" aria-label="Language Selector">
+            <a class="lang-btn" href="en.html" hreflang="en">English</a>
+            <a class="lang-btn active" href="./" hreflang="vi" aria-current="page">Tiếng Việt</a>
+            <a class="lang-btn" href="zh-hans.html" hreflang="zh-Hans">简体中文</a>
+            <a class="lang-btn" href="zh-hant.html" hreflang="zh-Hant">繁體中文</a>
+          </nav>
+        </div>
+
+        <p style="font-size: 1.1rem; max-width: 760px; margin-bottom: 1.5rem;">
+          Thước Lỗ Ban cho người cầm thước: chọn hạng mục, nhập kích thước, biết ngay tốt hay xấu, còn cách ranh cung bao nhiêu mm và cỡ đẹp gần nhất là bao nhiêu.
+        </p>
+
+        <div class="hero-actions" style="justify-content: flex-start;">
+          <a href="https://play.google.com/store/apps/details?id=dev.techfusion.luban" class="btn btn-primary" rel="noopener">Tải trên Google Play</a>
+          <a href="../privacy/muc-thuoc.html" class="btn btn-secondary">Chính sách bảo mật</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Screenshots -->
+    <section class="section" aria-label="Ảnh màn hình">
+      <div class="container">
+        <div class="screens">
+          <figure>
+            <img src="../assets/muc-thuoc/ruler.webp" width="540" height="1112" alt="Cửa chính rộng 1260 mm: Tốt, cung Thiên Tài trên thước thông thủy 52,2 cm, cả 3 thước đều tốt">
+            <figcaption>Kết luận trên cả 3 thước</figcaption>
+          </figure>
+          <figure>
+            <img src="../assets/muc-thuoc/suggest.webp" width="540" height="1112" loading="lazy" alt="Cửa phòng rộng 900 mm: Xấu, cung Cô Độc, gợi ý 843 mm hoặc 984 mm">
+            <figcaption>Cỡ xấu kèm gợi ý cỡ đẹp gần nhất</figcaption>
+          </figure>
+          <figure>
+            <img src="../assets/muc-thuoc/grid.webp" width="540" height="1112" loading="lazy" alt="Lưới gợi ý Rộng × Cao cho cửa chính, bước 50 mm">
+            <figcaption>Lưới Rộng × Cao cho cửa</figcaption>
+          </figure>
+          <figure>
+            <img src="../assets/muc-thuoc/presets.webp" width="540" height="1112" loading="lazy" alt="Chọn hạng mục: cửa, cổng, giếng trời, bệ bếp, giường, tủ quần áo">
+            <figcaption>Chọn hạng mục, app chọn thước</figcaption>
+          </figure>
+          <figure>
+            <img src="../assets/muc-thuoc/altar.webp" width="540" height="1112" loading="lazy" alt="Bàn thờ đứng rộng 1270 mm: Tốt, cung Vượng trên thước âm phần 38,8 cm, đạt 3/3">
+            <figcaption>Bàn thờ: Rộng × Sâu × Cao</figcaption>
+          </figure>
+          <figure>
+            <img src="../assets/muc-thuoc/items.webp" width="540" height="1112" loading="lazy" alt="Danh sách hạng mục của dự án, nhóm theo khu vực">
+            <figcaption>Lưu hạng mục theo dự án</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- Features -->
+    <section id="features" class="section" style="background-color: var(--bg-surface);">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Tính năng</h2>
+          <p class="section-desc">Một công cụ đo đạc cho nhà ở, làm rõ từng con số thay vì chỉ tô màu đỏ đen.</p>
+        </div>
+
+        <div class="features-grid">
+          <div class="feature-box">
+            <div class="feature-box-icon">📏</div>
+            <h3 class="feature-box-title">Đúng thước cho từng hạng mục</h3>
+            <p class="feature-box-desc">Cửa và lối đi đo lọt lòng trên thước thông thủy 52,2 cm. Nội thất và khối xây đo phủ bì trên thước 42,9 cm. Bàn thờ và âm phần trên thước 38,8 cm. Bạn chọn hạng mục, app chọn thước.</p>
+          </div>
+          <div class="feature-box">
+            <div class="feature-box-icon">✅</div>
+            <h3 class="feature-box-title">Kết luận kèm khoảng cách</h3>
+            <p class="feature-box-desc">Tốt, Tốt · sát ranh hoặc Xấu, kèm tên cung lớn, cung nhỏ và số mm còn cách ranh cung. Mỗi kết luận có chữ và biểu tượng, không chỉ dựa vào màu.</p>
+          </div>
+          <div class="feature-box">
+            <div class="feature-box-icon">🎯</div>
+            <h3 class="feature-box-title">Gợi ý cỡ đẹp gần nhất</h3>
+            <p class="feature-box-desc">Gặp cỡ xấu, app đưa ra cỡ tốt gần nhất ở phía dưới và phía trên. Nút “Tốt ▶” nhảy tới cỡ tốt kế tiếp, làm tròn theo bước bạn chọn.</p>
+          </div>
+          <div class="feature-box">
+            <div class="feature-box-icon">🚪</div>
+            <h3 class="feature-box-title">Lưới Rộng × Cao</h3>
+            <p class="feature-box-desc">Cửa cần cả chiều rộng và chiều cao cùng đẹp. Lưới gợi ý cho thấy mọi cặp kích thước quanh cỡ bạn nhập, bước từ 5 đến 50 mm, và cặp đạt cả hai gần nhất.</p>
+          </div>
+          <div class="feature-box">
+            <div class="feature-box-icon">🗂️</div>
+            <h3 class="feature-box-title">Dự án cho cả ngôi nhà</h3>
+            <p class="feature-box-desc">Lưu từng hạng mục theo khu vực như Tầng 1 hay Phòng thờ, thêm ảnh nếu cần, rồi chia sẻ danh sách cho thợ qua Zalo, Messenger hay ứng dụng bất kỳ.</p>
+          </div>
+          <div class="feature-box">
+            <div class="feature-box-icon">⚙️</div>
+            <h3 class="feature-box-title">Chọn thước theo nguồn bạn tin</h3>
+            <p class="feature-box-desc">Tài liệu ghi khác nhau: 52,2 hay 52 cm, 38,8 hay 39 cm. Chọn trong Cài đặt và kết quả đã lưu được tính lại. Dung sai “sát ranh” và bước làm tròn cũng chỉnh được.</p>
+          </div>
+          <div class="feature-box">
+            <div class="feature-box-icon">🔒</div>
+            <h3 class="feature-box-title">Không tài khoản, dữ liệu trên máy</h3>
+            <p class="feature-box-desc">Dự án và ảnh chỉ lưu trên điện thoại của bạn. Thước dùng được cả khi không có mạng, đo tới 50 m.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- The three rulers -->
+    <section id="rulers" class="section">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Ba thước Lỗ Ban dùng ở Việt Nam</h2>
+          <p class="section-desc">Mỗi thước chia thành các cung tốt (đỏ) và xấu (đen), lặp lại theo chu kỳ. Hạng mục quyết định dùng thước nào và đo thế nào.</p>
+        </div>
+
+        <div class="summary-table-container">
+          <table class="summary-table">
+            <thead>
+              <tr>
+                <th>Thước</th>
+                <th>Chu kỳ</th>
+                <th>Dùng cho</th>
+                <th>Cách đo</th>
+                <th>Cung tốt (đỏ)</th>
+                <th>Cung xấu (đen)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Thông thủy 52,2 cm</td>
+                <td>522 mm, 8 cung</td>
+                <td>Cửa đi, cửa sổ, cổng, cửa cuốn, giếng trời, ô thoáng</td>
+                <td>Lọt lòng</td>
+                <td>Quý Nhân, Thiên Tài, Nhân Lộc, Tể Tướng</td>
+                <td>Hiểm Họa, Thiên Tai, Cô Độc, Thiên Tặc</td>
+              </tr>
+              <tr>
+                <td>Dương trạch 42,9 cm</td>
+                <td>429 mm, 8 cung</td>
+                <td>Bệ bếp, giường, tủ, bàn, bậc cầu thang, khối xây</td>
+                <td>Phủ bì</td>
+                <td>Tài, Nghĩa, Quan, Bản</td>
+                <td>Bệnh, Ly, Kiếp, Hại</td>
+              </tr>
+              <tr>
+                <td>Âm phần 38,8 cm</td>
+                <td>388 mm, 10 cung</td>
+                <td>Bàn thờ, tủ thờ, bàn thờ Thần Tài, mộ phần</td>
+                <td>Phủ bì</td>
+                <td>Đinh, Vượng, Nghĩa, Quan, Hưng, Tài</td>
+                <td>Hại, Khổ, Tử, Thất</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="highlight-box">
+          <p><strong>Cách tính:</strong> lấy kích thước trừ đi số chu kỳ trọn vẹn rồi xem phần dư rơi vào cung nào. Ví dụ cửa chính rộng 1260 mm trên thước 52,2: 1260 − 2 × 522 = 216 mm, nằm trong cung Thiên Tài (195,75–261 mm), nên là cỡ tốt. Ranh cung xấu gần nhất là 195,75 mm, cách 20,25 mm.</p>
+        </div>
+        <p><strong>Lọt lòng</strong> là khoảng trống bên trong khuôn, không tính cánh và khuôn. <strong>Phủ bì</strong> là kích thước ngoài cùng của vật.</p>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq" class="section" style="background-color: var(--bg-surface);">
+      <div class="container faq" style="max-width: 860px;">
+        <div class="section-header">
+          <h2 class="section-title">Hỏi đáp</h2>
+        </div>
+
+        <details open>
+          <summary>Thước Lỗ Ban là gì?</summary>
+          <p>Thước Lỗ Ban là thước dân gian dùng khi chọn kích thước nhà cửa, đồ đạc và đồ thờ. Mỗi thước chia thành các cung tốt (đỏ) và xấu (đen), lặp lại theo chu kỳ. Ở Việt Nam thường dùng ba thước: thông thủy 52,2 cm, dương trạch 42,9 cm và âm phần 38,8 cm.</p>
+        </details>
+        <details>
+          <summary>Đo cửa dùng thước nào?</summary>
+          <p>Thước thông thủy 52,2 cm, đo lọt lòng: khoảng trống bên trong khuôn cửa, không tính cánh. Nên kiểm tra cả chiều rộng và chiều cao. Mực Thước báo “Đạt 2/2” khi cả hai cùng tốt, và lưới Rộng × Cao giúp tìm cặp kích thước đạt cả hai.</p>
+        </details>
+        <details>
+          <summary>Bàn thờ dùng thước nào?</summary>
+          <p>Thước âm phần 38,8 cm (thước Đinh Lan), đo phủ bì: kích thước ngoài cùng của bàn thờ. Nên kiểm tra cả rộng, sâu và cao.</p>
+        </details>
+        <details>
+          <summary>Vì sao các trang và ứng dụng cho kết quả khác nhau?</summary>
+          <p>Vì các nguồn không thống nhất: thước thông thủy được ghi 52,2 hoặc 52 cm, thước âm phần 38,8 hoặc 39 cm, và có nơi dùng thước 38,8 cho cả đồ nội thất. Nhiều cỡ phổ biến lại nằm sát ranh cung, nên chỉ lệch vài mm là đổi kết luận. Mực Thước ghi rõ thước đã dùng cho mỗi kết quả, cho chọn biến thể trong Cài đặt và báo “sát ranh” khi cỡ cách ranh ít hơn mức dung sai.</p>
+        </details>
+        <details>
+          <summary>Mực Thước có mất phí không?</summary>
+          <p>Tải và dùng thước miễn phí, kèm 1 dự án. Mua một lần trên Google Play để tạo dự án không giới hạn và tắt quảng cáo, hoặc chỉ mua gói tắt quảng cáo. Bản miễn phí có một banner nhỏ ở danh sách dự án, không bao giờ che thước hay kết luận.</p>
+        </details>
+        <details>
+          <summary>Có cần mạng hay tài khoản không?</summary>
+          <p>Không cần tài khoản. Thước và dự án dùng được khi không có mạng. Mạng chỉ dùng để tải quảng cáo và mua hàng qua Google Play.</p>
+        </details>
+        <details>
+          <summary>Kết quả có thay cho quy chuẩn xây dựng không?</summary>
+          <p>Không. Thước Lỗ Ban là phong tục để tham khảo. Kích thước cửa, cầu thang hay lan can vẫn phải theo quy chuẩn xây dựng và tư vấn kỹ thuật.</p>
+        </details>
+      </div>
+    </section>
+
+    <!-- Support & Contact Section -->
+    <section id="contact" class="section">
+      <div class="container">
+        <div class="highlight-box" style="background-color: var(--bg-secondary); border: 1px solid var(--border-subtle); border-left: 4px solid var(--accent-primary); border-radius: var(--radius-lg); padding: 2rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1.5rem;">
+          <div>
+            <h2 style="font-size: 1.5rem; margin-bottom: 0.5rem;">Góp ý và hỗ trợ</h2>
+            <p style="margin-bottom: 0.25rem;">Thấy kết quả chưa khớp với thước cuộn của bạn, hay muốn thêm hạng mục? Hãy viết cho chúng tôi.</p>
+          </div>
+          <div>
+            <a href="mailto:support@techfusion.dev" class="btn btn-primary">support@techfusion.dev</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Global Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <div class="brand" style="margin-bottom: 0.75rem;">
+            <img src="../assets/logo.png" class="brand-logo" alt="Techfusion Ltd Logo" width="32" height="32">
+            <span class="brand-text">Techfusion Ltd</span>
+          </div>
+          <p>Delivering modern, privacy-focused mobile software applications and interactive tools.</p>
+          <p style="font-size: 0.82rem; color: var(--text-muted); margin-top: 0.5rem; line-height: 1.4;">
+            Techfusion Ltd is a registered business under the laws of Vietnam.<br>Company number: 1001261052
+          </p>
+        </div>
+
+        <div>
+          <h4 class="footer-heading">Mực Thước</h4>
+          <ul class="footer-links">
+            <li><a href="https://play.google.com/store/apps/details?id=dev.techfusion.luban" rel="noopener">Google Play</a></li>
+            <li><a href="../privacy/muc-thuoc.html">Chính sách bảo mật</a></li>
+            <li><a href="../index.html#apps">Tất cả ứng dụng</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-heading">Support</h4>
+          <ul class="footer-links">
+            <li><a href="mailto:support@techfusion.dev">support@techfusion.dev</a></li>
+            <li><a href="https://github.com/techfusionltd" target="_blank" rel="noopener">GitHub Organization</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>&copy; 2026 Techfusion Ltd. All rights reserved.</div>
+        <div>Hosted on GitHub Pages &bull; techfusionltd.github.io</div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+</body>
+</html>
