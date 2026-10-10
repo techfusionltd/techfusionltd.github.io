@@ -457,12 +457,6 @@ code {
   color: #fff;
 }
 
-.app-icon-muc-thuoc {
-  background: #b3261e;
-  color: #fff;
-  font-weight: 700;
-}
-
 .app-icon-placeholder {
   background: var(--bg-surface);
   border: 1px dashed var(--border-subtle);
