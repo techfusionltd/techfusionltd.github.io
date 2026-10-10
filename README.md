@@ -1,6 +1,6 @@
 # Techfusion Ltd GitHub Pages Website & Privacy Portal
 
-Official repository for **[techfusionltd.github.io](https://techfusionltd.github.io)** — the landing page, app showcase, and mobile privacy policy directory for Techfusion Ltd.
+Official repository for **[tf.io.vn](https://tf.io.vn)** — the landing page, app showcase, and mobile privacy policy directory for Techfusion Ltd.
 
 ---
 
@@ -43,9 +43,9 @@ Official repository for **[techfusionltd.github.io](https://techfusionltd.github
 
 | App Name | Package ID | Platform | Privacy Policy |
 |---|---|---|---|
-| **HabitHero: AI Voice Coach** | `dev.techfusion.funnyprankcalls` | iOS | [`/privacy/habit-hero.html`](https://techfusionltd.github.io/privacy/habit-hero.html) |
-| **Simulated AI Calls** | `dev.techfusion.funnyprankcalls` | Android / iOS | [`/privacy/simulated-ai-calls.html`](https://techfusionltd.github.io/privacy/simulated-ai-calls.html) |
-| **Mực Thước – Thước Lỗ Ban** (墨尺) | `dev.techfusion.luban` | Android | [`/privacy/muc-thuoc.html`](https://techfusionltd.github.io/privacy/muc-thuoc.html) · landing page [`/muc-thuoc/`](https://techfusionltd.github.io/muc-thuoc/) |
+| **HabitHero: AI Voice Coach** | `dev.techfusion.funnyprankcalls` | iOS | [`/privacy/habit-hero.html`](https://tf.io.vn/privacy/habit-hero.html) |
+| **Simulated AI Calls** | `dev.techfusion.funnyprankcalls` | Android / iOS | [`/privacy/simulated-ai-calls.html`](https://tf.io.vn/privacy/simulated-ai-calls.html) |
+| **Mực Thước – Thước Lỗ Ban** (墨尺) | `dev.techfusion.luban` | Android | [`/privacy/muc-thuoc.html`](https://tf.io.vn/privacy/muc-thuoc.html) · landing page [`/muc-thuoc/`](https://tf.io.vn/muc-thuoc/) |
 
 ---
 
@@ -70,7 +70,9 @@ When you release a new app:
 1. Go to your GitHub repository settings (`https://github.com/techfusionltd/techfusionltd.github.io/settings/pages`).
 2. Under **Build and deployment > Source**, select **Deploy from a branch**.
 3. Choose the **`main`** branch and the **`/ (root)`** folder.
-4. Click **Save**. Your site will be live at `https://techfusionltd.github.io`!
+4. Click **Save**. Your site will be live at `https://tf.io.vn`!
+
+**Custom domain:** the `CNAME` file holds `tf.io.vn`. DNS is on Cloudflare: the apex has GitHub Pages A/AAAA records and `www` is a CNAME to `techfusionltd.github.io`, all set to **DNS only** (grey cloud) so GitHub can renew the HTTPS certificate. Old `techfusionltd.github.io` links redirect to `tf.io.vn`, so keep the domain renewed or every store privacy link breaks.
 
 ---
 

@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://techfusionltd.github.io/sitemap.xml
+Sitemap: https://tf.io.vn/sitemap.xml
