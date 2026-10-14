@@ -1001,8 +1001,47 @@ a.lang-btn:hover {
     padding: 1.5rem;
   }
 
+  /* Header: brand and theme toggle on top, the links below (wrapping when they don't fit) */
+  :root {
+    --header-height: 132px; /* anchor scroll offset: the homepage header is the tallest, with its links on two lines */
+  }
+
+  .site-header {
+    height: auto;
+    padding: 0.6rem 0 0.4rem;
+  }
+
+  .header-inner {
+    flex-wrap: wrap;
+    row-gap: 0.35rem;
+  }
+
+  .brand {
+    font-size: 1.05rem;
+    gap: 0.5rem;
+    min-width: 0;
+    white-space: nowrap;
+  }
+
+  .brand-logo {
+    width: 32px;
+    height: 32px;
+  }
+
+  .brand-badge {
+    font-size: 0.62rem;
+  }
+
+  .site-header nav {
+    order: 3;
+    width: 100%;
+  }
+
   .nav-links {
-    display: none; /* In full version, add mobile menu */
+    flex-wrap: wrap;
+    gap: 0.3rem 1.25rem;
+    padding: 0.4rem 0;
+    white-space: nowrap;
   }
 
   .footer-inner {
@@ -1017,5 +1056,11 @@ a.lang-btn:hover {
   .summary-table td:first-child {
     width: auto;
     white-space: normal;
+  }
+}
+
+@media (max-width: 340px) {
+  .brand-badge {
+    display: none;
   }
 }
