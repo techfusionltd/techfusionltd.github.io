@@ -8,6 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initCopyButtons();
   initTableOfContents();
   initAppSearch();
+  initPlayReferrer();
 });
 
 /* Theme Handling (Dark / Light) */
@@ -184,5 +185,16 @@ function initAppSearch() {
         card.style.display = 'none';
       }
     });
+  });
+}
+
+/* Pass the visit's utm_* tags on to Google Play as the install referrer, so Play Console can attribute installs */
+function initPlayReferrer() {
+  const params = new URLSearchParams(location.search);
+  const utm = [...params].filter(([key]) => key.startsWith('utm_'));
+  if (!utm.length) return;
+  const referrer = encodeURIComponent(new URLSearchParams(utm).toString());
+  document.querySelectorAll('a[href^="https://play.google.com/store/apps/details"]').forEach(link => {
+    link.href += '&referrer=' + referrer;
   });
 }
