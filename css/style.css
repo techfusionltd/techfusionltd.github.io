@@ -1064,3 +1064,34 @@ a.lang-btn:hover {
     display: none;
   }
 }
+
+/* Mực Thước pages: the app icon's blue-violet rgb(81, 67, 217) is the primary color.
+   Buttons use it as is; in the dark theme, text accents use a lighter tint so they stay readable. */
+.app-muc-thuoc {
+  --accent-primary: #A79FF5;
+  --accent-secondary: #8B80F0;
+  --accent-glow: rgba(81, 67, 217, 0.22);
+  --badge-bg: rgba(81, 67, 217, 0.16);
+  --badge-text: #B4ADF7;
+  --badge-border: rgba(81, 67, 217, 0.4);
+  --border-focus: #8B80F0;
+}
+
+[data-theme="light"] .app-muc-thuoc {
+  --accent-primary: #5143D9;
+  --accent-secondary: #3F32B8;
+  --accent-glow: rgba(81, 67, 217, 0.12);
+  --badge-bg: rgba(81, 67, 217, 0.08);
+  --badge-text: #4335C4;
+  --badge-border: rgba(81, 67, 217, 0.22);
+  --border-focus: #5143D9;
+}
+
+.app-muc-thuoc .btn-primary {
+  background: #5143D9;
+  box-shadow: 0 4px 14px rgba(81, 67, 217, 0.35);
+}
+
+.app-muc-thuoc .btn-primary:hover {
+  box-shadow: 0 6px 20px rgba(81, 67, 217, 0.45);
+}
