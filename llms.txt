@@ -1,0 +1,41 @@
+# Techfusion Ltd
+
+> Small Vietnamese studio (company number 1001261052) making privacy-respecting mobile utilities. No accounts, no servers: app data stays on the device. Support: support@techfusion.dev.
+
+## Mực Thước – Thước Lỗ Ban (Luban ruler app)
+
+Mực Thước (墨尺) checks sizes of doors, furniture and altars against the traditional Luban ruler (thước Lỗ Ban, 鲁班尺). Pick the item, enter a size in mm, and it says good or bad, which section the size falls in, how many mm to the nearest section edge, and the nearest good sizes below and above. A width × height grid finds door sizes where both dimensions pass. Projects group items by area (for example Floor 1, Altar room) with optional photos, and can be shared as text.
+
+- Platforms: Android and iPhone. Free with 1 project; one-time purchase for unlimited projects (also removes ads) or ad removal alone. One AdMob banner on the project list in the free version, none on the ruler.
+- App ID: dev.techfusion.luban
+- Google Play: https://play.google.com/store/apps/details?id=dev.techfusion.luban
+- App Store (Vietnam, Singapore, Malaysia, Taiwan, Hong Kong): https://apps.apple.com/vn/app/id6823257420
+- Interface language: Vietnamese. Landing pages in four languages:
+  - Vietnamese: https://tf.io.vn/muc-thuoc/
+  - English: https://tf.io.vn/muc-thuoc/en.html
+  - Simplified Chinese: https://tf.io.vn/muc-thuoc/zh-hans.html
+  - Traditional Chinese: https://tf.io.vn/muc-thuoc/zh-hant.html
+- Privacy policy (EN, VI, zh-Hans, zh-Hant): https://tf.io.vn/privacy/muc-thuoc.html
+
+### The three rulers used in Vietnam
+
+| Ruler | Cycle | Used for | Measured as | Good sections (red) | Bad sections (black) |
+|---|---|---|---|---|---|
+| Thông thủy 52.2 cm | 522 mm, 8 sections | doors, windows, gates, roller doors, skylights, vents | clear opening (inside the frame, without the leaf) | Quý Nhân, Thiên Tài, Nhân Lộc, Tể Tướng | Hiểm Họa, Thiên Tai, Cô Độc, Thiên Tặc |
+| Dương trạch 42.9 cm (文公尺) | 429 mm, 8 sections | kitchen counters, beds, cabinets, tables, stair steps, masonry | overall (outermost size) | Tài, Nghĩa, Quan, Bản | Bệnh, Ly, Kiếp, Hại |
+| Âm phần 38.8 cm (丁兰尺, Đinh Lan) | 388 mm, 10 sections | altars, altar cabinets, Thần Tài altars, graves | overall (outermost size) | Đinh, Vượng, Nghĩa, Quan, Hưng, Tài | Hại, Khổ, Tử, Thất |
+
+How a size is checked: subtract whole cycles, then see which section the remainder falls in. Example: a main door 1260 mm wide on the 52.2 cm ruler gives 1260 − 2 × 522 = 216 mm, inside Thiên Tài (195.75–261 mm), so it is good; the nearest bad edge is 195.75 mm, 20.25 mm away.
+
+Sources disagree on the exact lengths (52.2 or 52 cm, 38.8 or 39 cm), and many common sizes sit within a few mm of a section edge. The app names the ruler used for every result, lets the user pick the variant in Settings, and flags sizes that are closer to an edge than the chosen tolerance. The Luban ruler is a custom for reference; building codes still apply.
+
+## Other apps
+
+- Simulated AI Calls (Android): https://tf.io.vn/privacy/simulated-ai-calls.html
+- HabitHero: AI Voice Coach (iOS): https://tf.io.vn/privacy/habit-hero.html
+
+## Site
+
+- Home: https://tf.io.vn/
+- Privacy policies: https://tf.io.vn/privacy/
+- Sitemap: https://tf.io.vn/sitemap.xml

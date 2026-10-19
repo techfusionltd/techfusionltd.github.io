@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://tf.io.vn/</loc></url>
-  <url><loc>https://tf.io.vn/muc-thuoc/</loc></url>
-  <url><loc>https://tf.io.vn/muc-thuoc/en.html</loc></url>
-  <url><loc>https://tf.io.vn/muc-thuoc/zh-hans.html</loc></url>
-  <url><loc>https://tf.io.vn/muc-thuoc/zh-hant.html</loc></url>
-  <url><loc>https://tf.io.vn/privacy/index.html</loc></url>
-  <url><loc>https://tf.io.vn/privacy/muc-thuoc.html</loc></url>
-  <url><loc>https://tf.io.vn/privacy/simulated-ai-calls.html</loc></url>
-  <url><loc>https://tf.io.vn/privacy/habit-hero.html</loc></url>
+  <url><loc>https://tf.io.vn/</loc><lastmod>2026-10-19</lastmod></url>
+  <url><loc>https://tf.io.vn/muc-thuoc/</loc><lastmod>2026-10-19</lastmod></url>
+  <url><loc>https://tf.io.vn/muc-thuoc/en.html</loc><lastmod>2026-10-19</lastmod></url>
+  <url><loc>https://tf.io.vn/muc-thuoc/zh-hans.html</loc><lastmod>2026-10-19</lastmod></url>
+  <url><loc>https://tf.io.vn/muc-thuoc/zh-hant.html</loc><lastmod>2026-10-19</lastmod></url>
+  <url><loc>https://tf.io.vn/privacy/index.html</loc><lastmod>2026-10-15</lastmod></url>
+  <url><loc>https://tf.io.vn/privacy/muc-thuoc.html</loc><lastmod>2026-10-15</lastmod></url>
+  <url><loc>https://tf.io.vn/privacy/simulated-ai-calls.html</loc><lastmod>2026-10-10</lastmod></url>
+  <url><loc>https://tf.io.vn/privacy/habit-hero.html</loc><lastmod>2026-10-10</lastmod></url>
 </urlset>
