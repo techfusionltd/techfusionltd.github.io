@@ -10,7 +10,7 @@ Mực Thước (墨尺) checks sizes of doors, furniture and altars against the 
 - App ID: dev.techfusion.luban
 - Google Play: https://play.google.com/store/apps/details?id=dev.techfusion.luban
 - App Store (Vietnam, Singapore, Malaysia, Taiwan, Hong Kong): https://apps.apple.com/vn/app/id6823257420
-- Interface language: Vietnamese. Landing pages in four languages:
+- Interface languages: Vietnamese, Traditional Chinese (Taiwan wording, Hong Kong variant) and Simplified Chinese; Chinese devices get the 文公尺 42.9 cm and 丁蘭尺 38.8 cm rulers, Vietnamese devices add the 52.2 cm thông thủy ruler. Landing pages in four languages:
   - Vietnamese: https://tf.io.vn/muc-thuoc/
   - English: https://tf.io.vn/muc-thuoc/en.html
   - Simplified Chinese: https://tf.io.vn/muc-thuoc/zh-hans.html
