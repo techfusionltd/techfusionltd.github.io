@@ -330,6 +330,13 @@ code {
   justify-content: center;
   gap: 1rem;
   flex-wrap: wrap;
+  align-items: center;
+}
+
+.store-badge img {
+  display: block;
+  height: 48px;
+  width: auto;
 }
 
 /* Buttons */
