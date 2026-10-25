@@ -109,16 +109,17 @@ function initCopyButtons() {
     btn.addEventListener('click', async (e) => {
       e.preventDefault();
       const textToCopy = btn.dataset.copyText;
+      const copiedLabel = document.documentElement.lang === 'vi' ? 'Đã sao chép!' : 'Copied!';
       try {
         await navigator.clipboard.writeText(textToCopy);
         const originalTitle = btn.getAttribute('title') || '';
-        btn.setAttribute('title', 'Copied!');
+        btn.setAttribute('title', copiedLabel);
         
         // Visual feedback
         btn.classList.add('copied');
         const feedbackBadge = document.createElement('span');
         feedbackBadge.className = 'copy-tooltip';
-        feedbackBadge.innerText = 'Copied!';
+        feedbackBadge.innerText = copiedLabel;
         btn.appendChild(feedbackBadge);
 
         setTimeout(() => {

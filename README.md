@@ -21,6 +21,10 @@ Official repository for **[tf.io.vn](https://tf.io.vn)** — the landing page, a
 │   └── style.css               # Shared modern CSS design system & typography
 ├── js/
 │   └── main.js                 # Dark/light theme, language switcher (en / vi / zh-Hans / zh-Hant), TOC scrollspy, copy actions
+├── tests/
+│   ├── run-all.js               # Runs every check below
+│   ├── homepage-check.js        # Home page: company info, Vietnamese copy, project filter, mobile layout
+│   └── policy-pages-check.js    # Privacy policies + landing pages: language switcher, no overflow
 ├── muc-thuoc/                  # Mực Thước landing page, one static file per language (SEO, hreflang)
 │   ├── index.html              # Tiếng Việt (default)
 │   ├── en.html                 # English
@@ -41,6 +45,9 @@ Official repository for **[tf.io.vn](https://tf.io.vn)** — the landing page, a
 
 ## 📱 Published Applications & Policies
 
+The home page (`index.html`) and the policy directory (`privacy/index.html`) are in **Vietnamese**.
+Individual policy pages stay multilingual (EN / VI / 中文) with their own language switcher.
+
 | App Name | Package ID | Platform | Privacy Policy |
 |---|---|---|---|
 | **HabitHero: AI Voice Coach** | `dev.techfusion.funnyprankcalls` | iOS | [`/privacy/habit-hero.html`](https://tf.io.vn/privacy/habit-hero.html) |
@@ -57,10 +64,12 @@ When you release a new app:
    - Duplicate `privacy/simulated-ai-calls.html` to `privacy/your-new-app-slug.html`.
    - Update the title, package ID, effective date, and policy sections.
 2. **Link from the Home Page**:
-   - Open `index.html` and add an `<article class="app-card">` block inside the `<div class="apps-grid">` container.
+   - Open `index.html` and add an `<article class="app-card project-card">` block inside the `<div class="apps-grid">` container.
+   - Copy an existing card and update the icon, `data-app-keywords`, title, description (Vietnamese), tags and links. Keep the `project-card-top` block with the `project-index` label so the numbering stays in order.
    - Point the policy button to `privacy/your-new-app-slug.html`.
 3. **Optional landing page**: copy `muc-thuoc/` (one file per language, each with its own canonical and the shared `hreflang` links), and add the new URLs to `sitemap.xml`.
-4. **Commit & Push to GitHub**:
+4. **Verify**: run `node tests/run-all.js` — it drives headless Chrome and asserts the company name, the business registration number, the Vietnamese copy, the project filter, the mobile layout and the language switchers on the policy pages.
+5. **Commit & Push to GitHub**:
    - Push to `main` branch. GitHub Pages will automatically deploy your updates.
 
 ---
