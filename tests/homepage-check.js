@@ -116,7 +116,12 @@ function check(name, condition, detail) {
 
     await send('Runtime.enable');
     await send('Page.enable');
-    await sleep(600);
+    await sleep(900);
+
+    // The page picks English by default in a headless en-GB browser. Force the
+    // Vietnamese UI deterministically for the base assertions, then verify the
+    // auto-locale switch later.
+    await evaluate(`TF_I18N.apply('vi'); true`);
 
     console.log('home page checks:');
 
@@ -203,17 +208,18 @@ function check(name, condition, detail) {
         title: section.querySelector('.section-title')?.textContent.trim(),
         cards: section.querySelectorAll('.service-card').length,
         hasEnglishLabel: !!section.querySelector('.bilingual-label'),
-        linksVi: links.includes('services/'),
-        linksEn: links.includes('services/en.html'),
-        linksMail: links.some(h => h.startsWith('mailto:support@techfusion.dev')),
+        linksDetails: links.includes('services/'),
+        linksMail: links.some(h => h.startsWith('mailto:info@techfusion.dev')),
+        linksPhone: links.some(h => h.startsWith('tel:+84936584666')),
       };
     })()`);
     check('home page has a services section', services.found, JSON.stringify(services));
     check('services section is titled in Vietnamese', services.title === 'Dịch vụ phát triển phần mềm theo yêu cầu', JSON.stringify(services));
     check('services section lists the four offerings', services.cards === 4, `got ${services.cards}`);
     check('services section names the service in English too', services.hasEnglishLabel, JSON.stringify(services));
-    check('services section links to both VI and EN pages', services.linksVi && services.linksEn, JSON.stringify(services));
+    check('services section links to the service details page', services.linksDetails, JSON.stringify(services));
     check('services section has a contact action', services.linksMail, JSON.stringify(services));
+    check('services section advertises the phone number', services.linksPhone, JSON.stringify(services));
 
     // --- Project filter still works ---------------------------------------
     const filtered = await evaluate(`(() => {
@@ -254,6 +260,54 @@ function check(name, condition, detail) {
     })()`);
     check('copy button copies the business number', copy.copied === '1001261052', JSON.stringify(copy));
     check('copy feedback is Vietnamese', copy.label === 'Đã sao chép!', JSON.stringify(copy));
+
+    // --- Bilingual UI mirrors the browser locale ---------------------------
+    const i18n = await evaluate(`(async () => {
+      TF_I18N.apply('en');
+      await new Promise(r => setTimeout(r, 50));
+      const enSnap = {
+        lang: document.documentElement.lang,
+        title: document.title,
+        nav: [...document.querySelectorAll('.nav-link')].map(a => a.textContent.trim()).join('|'),
+        h1: document.querySelector('.hero-title').textContent.trim(),
+        info: document.body.textContent.includes('info@techfusion.dev'),
+        supportOld: document.body.textContent.includes('support@techfusion.dev'),
+        phone: document.body.textContent.includes('+84 936 584 666'),
+        projectTitle: document.getElementById('apps').querySelector('.section-title').textContent.trim(),
+      };
+      TF_I18N.apply('vi');
+      await new Promise(r => setTimeout(r, 50));
+      const viSnap = {
+        nav: [...document.querySelectorAll('.nav-link')].map(a => a.textContent.trim()).join('|'),
+        h1: document.querySelector('.hero-title').textContent.trim(),
+        projectTitle: document.getElementById('apps').querySelector('.section-title').textContent.trim(),
+      };
+      const pickEn = Object.defineProperty;
+      Object.defineProperty(navigator, 'languages', { value: ['vi-VN', 'vi', 'en'], configurable: true });
+      const autoVi = TF_I18N.pickLang();
+      Object.defineProperty(navigator, 'languages', { value: ['en-US', 'en'], configurable: true });
+      const autoEn = TF_I18N.pickLang();
+      return { enSnap, viSnap, pickEn: !!pickEn, autoVi, autoEn };
+    })()`);
+    check('English UI renders nav, hero and project heading', i18n.enSnap.lang === 'en' && i18n.enSnap.nav === 'Home|Projects|Services|Contact' && i18n.enSnap.h1 === 'Techfusion company limited' && i18n.enSnap.projectTitle === 'Featured projects', JSON.stringify(i18n.enSnap));
+    check('Vietnamese UI restores nav and headings', i18n.viSnap.nav === 'Trang chủ|Dự án|Dịch vụ|Liên hệ' && i18n.viSnap.h1 === 'Công ty TNHH Techfusion' && i18n.viSnap.projectTitle === 'Dự án nổi bật', JSON.stringify(i18n.viSnap));
+    check('locale detection picks vi for Vietnamese browsers', i18n.autoVi === 'vi', JSON.stringify(i18n));
+    check('locale detection picks en for English browsers', i18n.autoEn === 'en', JSON.stringify(i18n));
+
+    // --- Contact details: info@ email + phone, no old email --------------
+    const contact = await evaluate(`(() => {
+      const body = document.body.textContent;
+      const links = [...document.querySelectorAll('a')].map(a => (a.getAttribute('href') || ''));
+      return {
+        infoEmail: links.filter(h => h === 'mailto:info@techfusion.dev').length,
+        phoneTel: links.filter(h => h === 'tel:+84936584666').length,
+        phoneShown: body.includes('+84 936 584 666'),
+        oldEmail: body.includes('support@techfusion.dev'),
+        jsonLdInfo: document.querySelector('script[type="application/ld+json"]')?.textContent.includes('info@techfusion.dev') ?? false,
+      };
+    })()`);
+    check('uses info@techfusion.dev only', contact.infoEmail > 0 && !contact.oldEmail && contact.jsonLdInfo, JSON.stringify(contact));
+    check('advertises the phone number', contact.phoneTel > 0 && contact.phoneShown, JSON.stringify(contact));
 
     // --- No runtime errors ------------------------------------------------
     check('no uncaught JavaScript errors', consoleErrors.length === 0, consoleErrors.join('; '));
