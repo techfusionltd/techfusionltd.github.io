@@ -1016,9 +1016,11 @@ a.lang-btn:hover {
     padding: 1.5rem;
   }
 
-  /* Header: brand and theme toggle on top, the links below (wrapping when they don't fit) */
+  /* Brand + theme toggle on top, the links below (wrapping when they don't fit).
+     The badge drops to its own line when the (long) company name leaves no room,
+     so the header never overflows sideways. */
   :root {
-    --header-height: 132px; /* anchor scroll offset: the homepage header is the tallest, with its links on two lines */
+    --header-height: 156px; /* anchor scroll offset: the tallest header, brand badge on its own line */
   }
 
   .site-header {
@@ -1043,8 +1045,10 @@ a.lang-btn:hover {
     height: 32px;
   }
 
+  /* The legal name is long; the badge would push the theme toggle onto its
+     own row, so it only shows on wider screens. */
   .brand-badge {
-    font-size: 0.62rem;
+    display: none;
   }
 
   .site-header nav {
@@ -1075,8 +1079,8 @@ a.lang-btn:hover {
 }
 
 @media (max-width: 340px) {
-  .brand-badge {
-    display: none;
+  .brand-text {
+    font-size: 0.95rem;
   }
 }
 
@@ -1455,6 +1459,123 @@ a.lang-btn:hover {
 
 .copy-badge-btn.copied {
   color: var(--success);
+}
+
+/* Custom software development services */
+.services-section {
+  background-color: var(--bg-surface);
+}
+
+.service-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.service-card {
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  padding: 1.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  transition: border-color 0.2s ease, transform 0.2s ease;
+}
+
+.service-card:hover {
+  border-color: var(--border-focus);
+  transform: translateY(-2px);
+}
+
+.service-card-icon {
+  width: 46px;
+  height: 46px;
+  border-radius: var(--radius-md);
+  background-color: var(--badge-bg);
+  color: var(--accent-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.service-card-icon svg {
+  width: 24px;
+  height: 24px;
+}
+
+.service-card-title {
+  font-size: 1.15rem;
+  margin: 0;
+}
+
+/* Short English label under the Vietnamese heading (bilingual studio) */
+.service-card-en {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--accent-secondary);
+  margin: -0.5rem 0 0;
+}
+
+.service-card-desc {
+  font-size: 0.92rem;
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+.service-card-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: auto;
+  padding-top: 0.25rem;
+}
+
+/* Delivery process steps */
+.process-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.25rem;
+  margin-top: 1.5rem;
+}
+
+.process-step {
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  padding: 1.4rem;
+}
+
+.process-num {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  color: var(--accent-primary);
+  margin-bottom: 0.6rem;
+}
+
+.process-step h3 {
+  font-size: 1rem;
+  margin-bottom: 0.4rem;
+}
+
+.process-step p {
+  font-size: 0.88rem;
+  margin: 0;
+}
+
+/* Section intro line that pairs the Vietnamese copy with its English label */
+.bilingual-label {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent-secondary);
+  margin: 0 0 0.6rem;
 }
 
 /* Responsive */

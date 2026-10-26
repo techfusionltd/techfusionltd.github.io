@@ -1,6 +1,17 @@
-# Techfusion Ltd
+# Techfusion company limited
 
-> Small Vietnamese studio (company number 1001261052) making privacy-respecting mobile utilities. No accounts, no servers: app data stays on the device. Support: support@techfusion.dev.
+> Small Vietnamese studio (company number 1001261052) making privacy-respecting mobile utilities and building custom software for clients. No accounts, no servers: app data stays on the device. Support: support@techfusion.dev.
+
+## Custom software development (services)
+
+Techfusion company limited also takes on client software projects: custom web applications, iOS & Android mobile apps, AI and voice integrations, and architecture/security work. Full source-code handover to the client, no vendor lock-in. Work happens in Vietnamese or English.
+
+- Services: web applications (SaaS, admin dashboards, portals, landing pages), mobile apps (native iOS with Swift, native Android with Kotlin, or cross-platform Flutter/React Native), AI integration (speech synthesis and recognition, LLM and RAG assistants), architecture, CI/CD and security reviews.
+- Delivery: five steps — discovery and requirements analysis, UI/UX design and architecture, sprint-based development with automated tests, deployment and source-code handover, then warranty and support. Cost and timeline are quoted per milestone; changes outside scope are reported first.
+- Data protection: minimal collection, encryption in transit and at rest, role-based access, audit logs; designed for GDPR and Vietnam's Decree 13/2023/ND-CP.
+- Landing pages (VI / EN):
+  - Vietnamese: https://tf.io.vn/services/
+  - English: https://tf.io.vn/services/en.html
 
 ## Mực Thước – Thước Lỗ Ban (Luban ruler app)
 

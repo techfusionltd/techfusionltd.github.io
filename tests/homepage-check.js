@@ -122,20 +122,45 @@ function check(name, condition, detail) {
 
     // --- Company identity is visible -------------------------------------
     const heroTitle = await evaluate(`document.querySelector('.hero-title').textContent.trim()`);
-    check('hero shows the company name', heroTitle === 'Techfusion Ltd', `got "${heroTitle}"`);
+    check('hero shows the Vietnamese company name', heroTitle === 'Công ty TNHH Techfusion', `got "${heroTitle}"`);
 
     const businessNumber = await evaluate(`document.querySelector('.company-field-mono').textContent.trim()`);
     check('hero shows the business registration number', businessNumber === '1001261052', `got "${businessNumber}"`);
+
+    const legalName = await evaluate(`document.querySelector('.company-field dd').textContent.trim()`);
+    check('company card lists the legal name', legalName === 'Công ty TNHH Techfusion', `got "${legalName}"`);
 
     // --- Copy is Vietnamese ----------------------------------------------
     const lang = await evaluate(`document.documentElement.lang`);
     check('document language is Vietnamese', lang === 'vi', `got "${lang}"`);
 
     const navLabels = await evaluate(`[...document.querySelectorAll('.nav-link')].map(a => a.textContent.trim()).join('|')`);
-    check('navigation is Vietnamese', navLabels === 'Trang chủ|Dự án|Chính sách bảo mật|Nguyên tắc bảo mật|Liên hệ', `got "${navLabels}"`);
+    check('navigation is Vietnamese', navLabels === 'Trang chủ|Dự án|Dịch vụ|Chính sách bảo mật|Nguyên tắc bảo mật|Liên hệ', `got "${navLabels}"`);
 
     const sectionTitles = await evaluate(`[...document.querySelectorAll('.section-title')].map(h => h.textContent.trim()).join('|')`);
     check('section headings are Vietnamese', sectionTitles.includes('Dự án nổi bật'), `got "${sectionTitles}"`);
+
+    // --- Custom software services section ---------------------------------
+    const services = await evaluate(`(() => {
+      const section = document.getElementById('services');
+      if (!section) return { found: false };
+      const links = [...section.querySelectorAll('a')].map(a => a.getAttribute('href'));
+      return {
+        found: true,
+        title: section.querySelector('.section-title')?.textContent.trim(),
+        cards: section.querySelectorAll('.service-card').length,
+        hasEnglishLabel: !!section.querySelector('.bilingual-label'),
+        linksVi: links.includes('services/'),
+        linksEn: links.includes('services/en.html'),
+        linksMail: links.some(h => h.startsWith('mailto:support@techfusion.dev')),
+      };
+    })()`);
+    check('home page has a services section', services.found, JSON.stringify(services));
+    check('services section is titled in Vietnamese', services.title === 'Dịch vụ phát triển phần mềm theo yêu cầu', JSON.stringify(services));
+    check('services section lists the four offerings', services.cards === 4, `got ${services.cards}`);
+    check('services section names the service in English too', services.hasEnglishLabel, JSON.stringify(services));
+    check('services section links to both VI and EN pages', services.linksVi && services.linksEn, JSON.stringify(services));
+    check('services section has a contact action', services.linksMail, JSON.stringify(services));
 
     // --- Project filter still works ---------------------------------------
     const filtered = await evaluate(`(() => {
@@ -202,11 +227,13 @@ function check(name, condition, detail) {
       lang: document.documentElement.lang,
       title: document.querySelector('.policy-title')?.textContent.trim(),
       hasCompanyNumber: document.body.textContent.includes('1001261052'),
+      hasVietnameseName: document.body.textContent.includes('Công ty TNHH Techfusion'),
       cards: document.querySelectorAll('.app-card[data-app-keywords]').length,
       nav: [...document.querySelectorAll('.nav-link')].map(a => a.textContent.trim()).join('|'),
     }))()`);
     check('privacy directory is in Vietnamese', privacy.lang === 'vi' && privacy.title === 'Danh mục chính sách quyền riêng tư', JSON.stringify(privacy));
     check('privacy directory shows the business number', privacy.hasCompanyNumber);
+    check('privacy directory uses the Vietnamese legal name', privacy.hasVietnameseName);
     check('privacy directory lists the apps', privacy.cards === 3, `got ${privacy.cards}`);
     check('privacy directory nav is Vietnamese', privacy.nav === 'Trang chủ|Danh mục ứng dụng|Hỗ trợ', `got "${privacy.nav}"`);
 

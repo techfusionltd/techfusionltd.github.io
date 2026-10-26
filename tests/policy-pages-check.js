@@ -185,6 +185,58 @@ function check(name, condition, detail) {
       check(`${file} has no horizontal overflow`, landing.overflow <= 0, `overflows by ${landing.overflow}px`);
     }
 
+    // --- Custom software service pages: legal name per language ----------
+    const SERVICE_PAGES = [
+      { file: 'services/index.html', expected: 'Công ty TNHH Techfusion' },
+      { file: 'services/en.html', expected: 'Techfusion company limited' },
+    ];
+    for (const { file, expected } of SERVICE_PAGES) {
+      await send('Page.navigate', { url: 'file://' + path.join(__dirname, '..', file) });
+      await sleep(1200);
+      const svc = await evaluate(`(() => ({
+        h1: document.querySelector('h1')?.textContent.trim() || '',
+        body: document.body.textContent,
+        overflow: document.documentElement.scrollWidth - document.documentElement.clientWidth,
+      }))()`);
+      check(`${file} renders`, svc.h1.length > 0);
+      check(`${file} uses "${expected}"`, svc.body.includes(expected));
+      check(`${file} has no horizontal overflow`, svc.overflow <= 0, `overflows by ${svc.overflow}px`);
+    }
+
+    // --- Legal name is language-correct inside the policy pages -----------
+    const POLICY_NAME_CHECKS = [
+      { file: 'privacy/muc-thuoc.html', viMarker: 'do <strong>Công ty TNHH Techfusion</strong>', enMarker: 'published by <strong>Techfusion company limited</strong>' },
+      { file: 'privacy/simulated-ai-calls.html', viMarker: 'bởi <strong>Công ty TNHH Techfusion</strong>', enMarker: 'published by <strong>Techfusion company limited</strong>' },
+      { file: 'privacy/habit-hero.html', viMarker: 'phát hành bởi <strong>Công ty TNHH Techfusion</strong>', enMarker: 'published by <strong>Techfusion company limited</strong>' },
+    ];
+    for (const { file, viMarker, enMarker } of POLICY_NAME_CHECKS) {
+      await send('Page.navigate', { url: 'file://' + path.join(__dirname, '..', file) });
+      await sleep(1200);
+      const html = await evaluate(`document.documentElement.outerHTML`);
+      check(`${file} uses the Vietnamese legal name in the Vietnamese section`, html.includes(viMarker), `missing "${viMarker}"`);
+      check(`${file} uses the English legal name in the English section`, html.includes(enMarker), `missing "${enMarker}"`);
+      check(`${file} no longer uses the old legal name`, !/Techfusion Ltd|TechFusion Ltd/.test(html));
+    }
+
+    // --- Custom software development landing pages (VI / EN) ---
+    for (const file of ['services/index.html', 'services/en.html']) {
+      await send('Page.navigate', { url: 'file://' + path.join(ROOT, file) });
+      await sleep(1200);
+      const svc = await evaluate(`(() => ({
+        lang: document.documentElement.lang,
+        h1: document.querySelector('h1')?.textContent.trim() || '',
+        cards: document.querySelectorAll('.service-card').length,
+        steps: document.querySelectorAll('.process-step').length,
+        langLinks: [...document.querySelectorAll('.language-switch-bar .lang-btn')].map(a => a.getAttribute('href')),
+        overflow: document.documentElement.scrollWidth - document.documentElement.clientWidth,
+      }))()`);
+      check(`${file} renders`, svc.h1.length > 0);
+      check(`${file} has no horizontal overflow`, svc.overflow <= 0, `overflows by ${svc.overflow}px`);
+      check(`${file} lists the four service cards`, svc.cards === 4, `got ${svc.cards}`);
+      check(`${file} lists the five process steps`, svc.steps === 5, `got ${svc.steps}`);
+      check(`${file} offers both languages`, svc.langLinks.includes('./') && svc.langLinks.includes('en.html'), JSON.stringify(svc.langLinks));
+    }
+
     check('no uncaught JavaScript errors', consoleErrors.length === 0, consoleErrors.join('; '));
   } finally {
     if (ws) ws.close();

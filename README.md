@@ -1,6 +1,6 @@
-# Techfusion Ltd GitHub Pages Website & Privacy Portal
+# Techfusion company limited GitHub Pages Website & Privacy Portal
 
-Official repository for **[tf.io.vn](https://tf.io.vn)** — the landing page, app showcase, and mobile privacy policy directory for Techfusion Ltd.
+Official repository for **[tf.io.vn](https://tf.io.vn)** — the landing page, app showcase, and mobile privacy policy directory for Techfusion company limited.
 
 ---
 
@@ -14,7 +14,7 @@ Official repository for **[tf.io.vn](https://tf.io.vn)** — the landing page, a
 ├── favicon.png                 # Brand icon
 ├── logo.png                    # Brand logo
 ├── assets/
-│   ├── logo.png                # Official Techfusion Ltd company logo
+│   ├── logo.png                # Official Techfusion company limited logo
 │   ├── funny-prank-calls.png   # Simulated AI Calls official app icon
 │   └── muc-thuoc/              # Mực Thước screenshots (WebP) and social preview image
 ├── css/
@@ -23,13 +23,16 @@ Official repository for **[tf.io.vn](https://tf.io.vn)** — the landing page, a
 │   └── main.js                 # Dark/light theme, language switcher (en / vi / zh-Hans / zh-Hant), TOC scrollspy, copy actions
 ├── tests/
 │   ├── run-all.js               # Runs every check below
-│   ├── homepage-check.js        # Home page: company info, Vietnamese copy, project filter, mobile layout
+│   ├── homepage-check.js        # Home page: company info, Vietnamese copy, project filter, services section, mobile layout
 │   └── policy-pages-check.js    # Privacy policies + landing pages: language switcher, no overflow
 ├── muc-thuoc/                  # Mực Thước landing page, one static file per language (SEO, hreflang)
 │   ├── index.html              # Tiếng Việt (default)
 │   ├── en.html                 # English
 │   ├── zh-hans.html            # 简体中文
 │   └── zh-hant.html            # 繁體中文
+├── services/                   # Custom software development landing pages (VI / EN)
+│   ├── index.html              # Tiếng Việt (default)
+│   └── en.html                 # English
 ├── privacy/
 │   ├── index.html              # Directory of all privacy policies
 │   ├── muc-thuoc.html          # Privacy Policy for Mực Thước (EN / VI / 简体 / 繁體)
@@ -53,6 +56,26 @@ Individual policy pages stay multilingual (EN / VI / 中文) with their own lang
 | **HabitHero: AI Voice Coach** | `dev.techfusion.funnyprankcalls` | iOS | [`/privacy/habit-hero.html`](https://tf.io.vn/privacy/habit-hero.html) |
 | **Simulated AI Calls** | `dev.techfusion.funnyprankcalls` | Android / iOS | [`/privacy/simulated-ai-calls.html`](https://tf.io.vn/privacy/simulated-ai-calls.html) |
 | **Mực Thước – Thước Lỗ Ban** (墨尺) | `dev.techfusion.luban` | Android | [`/privacy/muc-thuoc.html`](https://tf.io.vn/privacy/muc-thuoc.html) · landing page [`/muc-thuoc/`](https://tf.io.vn/muc-thuoc/) |
+
+---
+
+## 🧩 Custom Software Development (Client Services)
+
+Besides the in-house apps above, Techfusion company limited takes on client software projects. The home page
+advertises this in the `#services` section (Vietnamese copy with English service names) and links to a
+dedicated landing page in both languages:
+
+| Page | URL | Language |
+|---|---|---|
+| Dịch vụ phát triển phần mềm | [`/services/`](https://tf.io.vn/services/) | Tiếng Việt (default) |
+| Custom Software Development | [`/services/en.html`](https://tf.io.vn/services/en.html) | English |
+
+Each file has its own `canonical` URL, the shared `hreflang` alternates (`vi`, `en`, `x-default`) and a
+`nav.language-switch-bar` linking the two, exactly like `muc-thuoc/`.
+
+**To update the services copy:** edit `services/index.html` (VI) and `services/en.html` (EN) — they are
+standalone pages, so the two files must be edited side by side. The shared card styles live in
+`css/style.css` (`.service-grid`, `.service-card`, `.process-grid`, `.process-step`).
 
 ---
 
@@ -87,7 +110,22 @@ When you release a new app:
 
 ## 📧 Support & Business Information
 
-- **Company:** Techfusion Ltd
+- **Company:** Techfusion company limited (Công ty TNHH Techfusion)
 - **Registration:** Registered business under the laws of Vietnam (Company number: 1001261052)
 - **Support Email:** `support@techfusion.dev`
+
+### Legal name by language
+
+Always write the registered name in the language of the text:
+
+| Language | Legal name |
+|---|---|
+| Vietnamese | **Công ty TNHH Techfusion** |
+| English | **Techfusion company limited** |
+| Chinese | **Techfusion company limited** (no Chinese form is registered) |
+
+Rules:
+- The short brand **Techfusion** (no suffix) stays as-is for brand references — logo alt text, "đội ngũ Techfusion", package IDs (`dev.techfusion.*`), and `support@techfusion.dev`.
+- On the bilingual policy pages (`privacy/muc-thuoc.html`, `privacy/simulated-ai-calls.html`, `privacy/habit-hero.html`), the shared header/footer chrome is English and uses **Techfusion company limited**; the Vietnamese section uses **Công ty TNHH Techfusion**.
+- Structured data carries all three forms: `name` (page language), `legalName`, `alternateName`.
 
