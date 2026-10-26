@@ -353,6 +353,8 @@ code {
   transition: all 0.2s ease;
   text-decoration: none;
   border: 1px solid transparent;
+  max-width: 100%;
+  overflow-wrap: anywhere;
 }
 
 .btn:hover {
@@ -496,6 +498,8 @@ code {
   display: flex;
   align-items: center;
   gap: 0.35rem;
+  min-width: 0;
+  overflow-wrap: anywhere;
 }
 
 .copy-badge-btn {
@@ -1017,10 +1021,10 @@ a.lang-btn:hover {
   }
 
   /* Brand + theme toggle on top, the links below (wrapping when they don't fit).
-     The badge drops to its own line when the (long) company name leaves no room,
-     so the header never overflows sideways. */
+     The brand badge is hidden here: the legal company name is long and the badge
+     would push the theme toggle onto its own row. */
   :root {
-    --header-height: 156px; /* anchor scroll offset: the tallest header, brand badge on its own line */
+    --header-height: 172px; /* anchor scroll offset: the tallest header, the nav links on two lines */
   }
 
   .site-header {
@@ -1225,7 +1229,7 @@ a.lang-btn:hover {
 
 .stats-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 1rem;
   padding-top: 1.75rem;
   padding-bottom: 1.75rem;
@@ -1368,6 +1372,7 @@ a.lang-btn:hover {
   align-items: center;
   flex-wrap: wrap;
   gap: 1.75rem;
+  min-width: 0;
 }
 
 .contact-copy {
@@ -1401,11 +1406,6 @@ a.lang-btn:hover {
 .btn-lg {
   padding: 0.85rem 1.6rem;
   font-size: 1rem;
-}
-
-/* Footer: 4 columns on the home page (the other pages keep the 3-column default) */
-.footer-inner-wide {
-  grid-template-columns: 2fr 1fr 1fr 1fr;
 }
 
 .footer-brand-head {
@@ -1468,7 +1468,7 @@ a.lang-btn:hover {
 
 .service-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(460px, 1fr));
   gap: 1.5rem;
   margin-top: 1.5rem;
 }
@@ -1594,8 +1594,7 @@ a.lang-btn:hover {
     row-gap: 1.75rem;
   }
 
-  .footer-inner,
-  .footer-inner-wide {
+  .footer-inner {
     grid-template-columns: 1fr 1fr;
   }
 }
@@ -1623,6 +1622,13 @@ a.lang-btn:hover {
     padding: 1.5rem;
   }
 
+  /* The email-address button is wider than a narrow phone; let it wrap the address. */
+  .contact-actions {
+    flex-shrink: 1;
+    min-width: 0;
+    max-width: 100%;
+  }
+
   .project-actions {
     justify-content: flex-start;
   }
@@ -1633,8 +1639,14 @@ a.lang-btn:hover {
     gap: 0.75rem;
   }
 
-  .footer-inner,
-  .footer-inner-wide {
+  /* The base .service-grid rule sets a 460px minimum track, which is wider
+     than a phone viewport. This override has to come after it in the file. */
+  .service-grid {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+
+  .footer-inner {
     grid-template-columns: 1fr;
   }
 }

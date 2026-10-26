@@ -36,7 +36,7 @@ Official repository for **[tf.io.vn](https://tf.io.vn)** — the landing page, a
 ├── privacy/
 │   ├── index.html              # Directory of all privacy policies
 │   ├── muc-thuoc.html          # Privacy Policy for Mực Thước (EN / VI / 简体 / 繁體)
-│   ├── habit-hero.html         # Complete bilingual Privacy Policy for HabitHero: AI Voice Coach (iOS)
+│   ├── habit-hero.html         # Complete bilingual Privacy Policy for HabitHero: AI Voice Coach (iOS) — hidden for now, noindex
 │   ├── habit-buddy.html        # Backward-compatible redirect to habit-hero.html
 │   ├── habit-buddy-ai-voice-coach.html # Alias redirect to habit-hero.html
 │   ├── simulated-ai-calls.html # Complete bilingual Privacy Policy for Simulated AI Calls
@@ -51,11 +51,28 @@ Official repository for **[tf.io.vn](https://tf.io.vn)** — the landing page, a
 The home page (`index.html`) and the policy directory (`privacy/index.html`) are in **Vietnamese**.
 Individual policy pages stay multilingual (EN / VI / 中文) with their own language switcher.
 
+The home page carries **no generic privacy content** — no principles section, no policy
+directory in the nav or footer. Every app card links to its own policy page instead.
+
 | App Name | Package ID | Platform | Privacy Policy |
 |---|---|---|---|
-| **HabitHero: AI Voice Coach** | `dev.techfusion.funnyprankcalls` | iOS | [`/privacy/habit-hero.html`](https://tf.io.vn/privacy/habit-hero.html) |
+| **HabitHero: AI Voice Coach** | `dev.techfusion.funnyprankcalls` | iOS | [`/privacy/habit-hero.html`](https://tf.io.vn/privacy/habit-hero.html) — hidden for now (not published yet) |
 | **Simulated AI Calls** | `dev.techfusion.funnyprankcalls` | Android / iOS | [`/privacy/simulated-ai-calls.html`](https://tf.io.vn/privacy/simulated-ai-calls.html) |
 | **Mực Thước – Thước Lỗ Ban** (墨尺) | `dev.techfusion.luban` | Android | [`/privacy/muc-thuoc.html`](https://tf.io.vn/privacy/muc-thuoc.html) · landing page [`/muc-thuoc/`](https://tf.io.vn/muc-thuoc/) |
+
+### Hiding an app before launch
+
+Add the `hidden` utility class (`display: none !important`) to the app card and to any
+footer links that point at it:
+
+```html
+<article class="app-card project-card hidden" data-app-keywords="...">
+```
+
+The class wins over the search filter's inline `style.display`, so the card stays hidden.
+Also add `<meta name="robots" content="noindex, follow">` to its policy page and drop it
+from `sitemap.xml` — the page must stay reachable, because app stores require a live
+privacy policy URL.
 
 ---
 

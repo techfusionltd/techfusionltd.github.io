@@ -237,6 +237,14 @@ function check(name, condition, detail) {
       check(`${file} offers both languages`, svc.langLinks.includes('./') && svc.langLinks.includes('en.html'), JSON.stringify(svc.langLinks));
     }
 
+    // --- Hidden apps: policy page stays reachable but is noindex ----------
+    {
+      await send('Page.navigate', { url: 'file://' + path.join(__dirname, '..', 'privacy/habit-hero.html') });
+      await sleep(1200);
+      const robots = await evaluate(`document.querySelector('meta[name="robots"]')?.content || ''`);
+      check('hidden app policy page is noindex but still reachable', robots.includes('noindex'), `robots="${robots}"`);
+    }
+
     check('no uncaught JavaScript errors', consoleErrors.length === 0, consoleErrors.join('; '));
   } finally {
     if (ws) ws.close();

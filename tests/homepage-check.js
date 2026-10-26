@@ -135,10 +135,41 @@ function check(name, condition, detail) {
     check('document language is Vietnamese', lang === 'vi', `got "${lang}"`);
 
     const navLabels = await evaluate(`[...document.querySelectorAll('.nav-link')].map(a => a.textContent.trim()).join('|')`);
-    check('navigation is Vietnamese', navLabels === 'Trang chủ|Dự án|Dịch vụ|Chính sách bảo mật|Nguyên tắc bảo mật|Liên hệ', `got "${navLabels}"`);
+    check('navigation is Vietnamese', navLabels === 'Trang chủ|Dự án|Dịch vụ|Liên hệ', `got "${navLabels}"`);
 
     const sectionTitles = await evaluate(`[...document.querySelectorAll('.section-title')].map(h => h.textContent.trim()).join('|')`);
     check('section headings are Vietnamese', sectionTitles.includes('Dự án nổi bật'), `got "${sectionTitles}"`);
+
+    // --- No generic privacy content on the home page ----------------------
+    // Each app links to its own policy page; the home page itself must not
+    // advertise privacy policies or principles.
+    const privacyOnHome = await evaluate(`(() => {
+      const body = document.body.textContent;
+      const nav = [...document.querySelectorAll('.nav-link')].map(a => a.textContent).join(' ');
+      return {
+        hasPrinciplesSection: !!document.getElementById('principles'),
+        hasPrinciplesHeading: body.includes('Nguyên tắc về quyền riêng tư'),
+        navMentionsPrivacy: /bảo mật|quyền riêng tư/i.test(nav),
+        hasPrivacyPoliciesColumn: [...document.querySelectorAll('.footer-heading')].some(h => /bảo mật/i.test(h.textContent)),
+        hasStatsPrivacyLabel: [...document.querySelectorAll('.stat-label')].some(s => /bảo mật|quyền riêng tư/i.test(s.textContent)),
+      };
+    })()`);
+    check('home page has no privacy principles section', !privacyOnHome.hasPrinciplesSection && !privacyOnHome.hasPrinciplesHeading, JSON.stringify(privacyOnHome));
+    check('navigation does not mention privacy', !privacyOnHome.navMentionsPrivacy, JSON.stringify(privacyOnHome));
+    check('footer has no privacy policies column', !privacyOnHome.hasPrivacyPoliciesColumn, JSON.stringify(privacyOnHome));
+    check('stats do not mention privacy', !privacyOnHome.hasStatsPrivacyLabel, JSON.stringify(privacyOnHome));
+
+    // Each app keeps its own policy reference (the not-yet-released
+    // placeholder card has none).
+    const appPolicyRefs = await evaluate(`(() => {
+      const cards = [...document.querySelectorAll('#apps .app-card')].filter(c => c.checkVisibility());
+      const published = cards.filter(c => !c.classList.contains('project-card-upcoming'));
+      return {
+        published: published.length,
+        withPolicyLink: published.filter(c => c.querySelector('a[href*="privacy/"]')).length,
+      };
+    })()`);
+    check('each published project links to its own policy page', appPolicyRefs.published === appPolicyRefs.withPolicyLink, JSON.stringify(appPolicyRefs));
 
     // --- Custom software services section ---------------------------------
     const services = await evaluate(`(() => {
@@ -175,6 +206,20 @@ function check(name, condition, detail) {
     })()`);
     check('all projects are listed', filtered.total === 4, `got ${filtered.total}`);
     check('filter matches the Vietnamese keyword "mực"', filtered.visible === 1 && filtered.name.startsWith('Mực Thước'), JSON.stringify(filtered));
+
+    // --- HabitHero is hidden for now (not published yet) ------------------
+    const hidden = await evaluate(`(() => {
+      const card = document.querySelector('.app-card[data-app-keywords*="habithero"]');
+      const footerLinks = [...document.querySelectorAll('.site-footer a[href*="habit-hero"]')];
+      return {
+        cardExists: !!card,
+        cardVisible: card ? card.checkVisibility() : false,
+        footerLinks: footerLinks.length,
+        footerLinksVisible: footerLinks.filter(a => a.checkVisibility()).length,
+      };
+    })()`);
+    check('HabitHero card is hidden on the home page', hidden.cardExists && !hidden.cardVisible, JSON.stringify(hidden));
+    check('HabitHero footer links are hidden', hidden.footerLinks > 0 && hidden.footerLinksVisible === 0, JSON.stringify(hidden));
 
     // --- Copy-to-clipboard still works ------------------------------------
     const copy = await evaluate(`(async () => {
@@ -229,22 +274,26 @@ function check(name, condition, detail) {
       hasCompanyNumber: document.body.textContent.includes('1001261052'),
       hasVietnameseName: document.body.textContent.includes('Công ty TNHH Techfusion'),
       cards: document.querySelectorAll('.app-card[data-app-keywords]').length,
+      visibleCards: [...document.querySelectorAll('.app-card[data-app-keywords]')].filter(c => c.checkVisibility()).length,
+      habitHeroVisible: (document.querySelector('.app-card[data-app-keywords*="habithero"]')?.checkVisibility()) ?? false,
       nav: [...document.querySelectorAll('.nav-link')].map(a => a.textContent.trim()).join('|'),
     }))()`);
     check('privacy directory is in Vietnamese', privacy.lang === 'vi' && privacy.title === 'Danh mục chính sách quyền riêng tư', JSON.stringify(privacy));
     check('privacy directory shows the business number', privacy.hasCompanyNumber);
     check('privacy directory uses the Vietnamese legal name', privacy.hasVietnameseName);
     check('privacy directory lists the apps', privacy.cards === 3, `got ${privacy.cards}`);
+    check('privacy directory shows 2 published apps', privacy.visibleCards === 2, `got ${privacy.visibleCards}`);
+    check('HabitHero card is hidden in the privacy directory', !privacy.habitHeroVisible, JSON.stringify(privacy));
     check('privacy directory nav is Vietnamese', privacy.nav === 'Trang chủ|Danh mục ứng dụng|Hỗ trợ', `got "${privacy.nav}"`);
 
-    // The privacy page keeps the 3-column footer, the home page uses 4.
+    // The home page and the privacy directory both use the 3-column footer.
     const footerCols = await evaluate(`getComputedStyle(document.querySelector('.footer-inner')).gridTemplateColumns.split(' ').length`);
     check('privacy directory keeps a 3-column footer', footerCols === 3, `got ${footerCols}`);
 
     await send('Page.navigate', { url: PAGE });
     await sleep(1200);
     const homeFooterCols = await evaluate(`getComputedStyle(document.querySelector('.footer-inner')).gridTemplateColumns.split(' ').length`);
-    check('home page uses a 4-column footer', homeFooterCols === 4, `got ${homeFooterCols}`);
+    check('home page uses a 3-column footer', homeFooterCols === 3, `got ${homeFooterCols}`);
   } finally {
     if (ws) ws.close();
     chrome.kill();

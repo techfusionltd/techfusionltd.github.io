@@ -43,7 +43,7 @@ Sources disagree on the exact lengths (52.2 or 52 cm, 38.8 or 39 cm), and many c
 ## Other apps
 
 - Simulated AI Calls (Android): https://tf.io.vn/privacy/simulated-ai-calls.html
-- HabitHero: AI Voice Coach (iOS): https://tf.io.vn/privacy/habit-hero.html
+- HabitHero: AI Voice Coach (iOS): https://tf.io.vn/privacy/habit-hero.html — hidden from the site listings for now (not published yet)
 
 ## Site
 
