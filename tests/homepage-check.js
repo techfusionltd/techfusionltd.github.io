@@ -171,6 +171,28 @@ function check(name, condition, detail) {
     })()`);
     check('each published project links to its own policy page', appPolicyRefs.published === appPolicyRefs.withPolicyLink, JSON.stringify(appPolicyRefs));
 
+    // --- Store badges match each app's real availability ------------------
+    const storeBadges = await evaluate(`(() => {
+      const card = title => {
+        const h = [...document.querySelectorAll('#apps .app-title')].find(x => x.textContent.includes(title));
+        return h ? h.closest('.app-card') : null;
+      };
+      const links = c => c ? [...c.querySelectorAll('a[href*="play.google.com"], a[href*="apps.apple.com"]')].map(a => a.href) : [];
+      const tags = c => c ? [...c.querySelectorAll('.app-tags .tag')].map(t => t.textContent.trim()) : [];
+      const sim = card('Simulated AI Calls');
+      const muc = card('Mực Thước');
+      return {
+        simLinks: links(sim),
+        simTags: tags(sim),
+        mucLinks: links(muc),
+        mucTags: tags(muc),
+      };
+    })()`);
+    check('Simulated AI Calls links to Google Play', storeBadges.simLinks.some(h => h.includes('play.google.com') && h.includes('dev.techfusion.funnyprankcalls')), JSON.stringify(storeBadges));
+    check('Simulated AI Calls has no App Store link', !storeBadges.simLinks.some(h => h.includes('apps.apple.com')), JSON.stringify(storeBadges));
+    check('Simulated AI Calls is tagged Android only', storeBadges.simTags.includes('Android') && !storeBadges.simTags.includes('iOS'), JSON.stringify(storeBadges.simTags));
+    check('Mực Thước links to both stores', storeBadges.mucLinks.some(h => h.includes('play.google.com')) && storeBadges.mucLinks.some(h => h.includes('apps.apple.com')), JSON.stringify(storeBadges.mucLinks));
+
     // --- Custom software services section ---------------------------------
     const services = await evaluate(`(() => {
       const section = document.getElementById('services');

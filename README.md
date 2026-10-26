@@ -57,7 +57,7 @@ directory in the nav or footer. Every app card links to its own policy page inst
 | App Name | Package ID | Platform | Privacy Policy |
 |---|---|---|---|
 | **HabitHero: AI Voice Coach** | `dev.techfusion.funnyprankcalls` | iOS | [`/privacy/habit-hero.html`](https://tf.io.vn/privacy/habit-hero.html) — hidden for now (not published yet) |
-| **Simulated AI Calls** | `dev.techfusion.funnyprankcalls` | Android / iOS | [`/privacy/simulated-ai-calls.html`](https://tf.io.vn/privacy/simulated-ai-calls.html) |
+| **Simulated AI Calls** | `dev.techfusion.funnyprankcalls` | Android | [`/privacy/simulated-ai-calls.html`](https://tf.io.vn/privacy/simulated-ai-calls.html) |
 | **Mực Thước – Thước Lỗ Ban** (墨尺) | `dev.techfusion.luban` | Android | [`/privacy/muc-thuoc.html`](https://tf.io.vn/privacy/muc-thuoc.html) · landing page [`/muc-thuoc/`](https://tf.io.vn/muc-thuoc/) |
 
 ### Hiding an app before launch
